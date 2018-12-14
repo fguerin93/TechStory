@@ -10,7 +10,7 @@ Loading container
     position: absolute;
     width: 100vw;
     height: 100vh;
-    background: #000;
+    background: radial-gradient(#000000E0,#000000)
 }
 
 .loading-container .sentence-container
