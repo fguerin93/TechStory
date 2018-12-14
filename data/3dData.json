@@ -1,0 +1,51 @@
+{
+    "airplane": 
+    {
+        "obj": "./models/airplane/Airplane.obj",
+        "berautify": "./models/airplane/Airplane Texture.png",
+        "type": "png",
+        "ratio": 0.001
+    },
+    "airplane2": 
+    {
+        "obj": "./models/airplane2/1405 Plane.obj",
+        "berautify": "./models/airplane2/1405 Plane.png",
+        "type": "png",
+        "ratio": 0.03
+    },
+    "cb":
+    {
+        "obj": "./models/cb/model.obj",
+        "berautify": "./models/cb/materials.mtl",
+        "type": "mtl",
+        "ratio": 0.6
+    },
+    "glasses": 
+    {
+        "obj": "./models/glasses/Glasses_01.obj",
+        "berautify": "./models/glasses/Glasses_01.mtl",
+        "type": "mtl",
+        "ratio": 0.05
+    },
+    "phone":
+    {
+        "obj": "./models/phone/Iphone.obj",
+        "berautify": "./models/phone/Iphone.mtl",
+        "type": "mtl",
+        "ratio": 0
+    },
+    "phoneBis":
+    {
+        "obj": "./models/phone/Phone_01.obj",
+        "berautify": "./models/phone/Phone_01.mtl",
+        "type": "mtl",
+        "ratio": 0.1
+    },
+    "watch": 
+    {
+        "obj": "./models/watch/Wirst Watch.obj",
+        "berautify": "./models/watch/Wirst Watch Texture.png",
+        "type": "png",
+        "ratio": 0.0005
+    }
+}

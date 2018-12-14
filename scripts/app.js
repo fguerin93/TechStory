@@ -1,9 +1,3 @@
+// let plane = new Element3d(window.innerWidth, window.innerHeight, "png", './models/watch/Wirst Watch.obj', './models/watch/Wirst Watch Texture.png', 0.0005)
 
-//DOM ELEMENTS
-
-const $loadingContainer = document.querySelector('.loading-container')
-const $sentenceContainer = $loadingContainer.querySelector('.loading-container .sentence-container')
-const $sentences = $sentenceContainer.querySelectorAll('.loading-container .sentence')
-
-const $skipButton = $loadingContainer.querySelector('.loading-container .ski-button')
-const $loadBar = $loadingContainer.querySelector('.loading-container .load-bar')
+let plane = new Element3d(window.innerWidth, window.innerHeight, "mtl", './models/glasses/Glasses_01.obj', './models/glasses/Glasses_01.mtl', 0.05)
