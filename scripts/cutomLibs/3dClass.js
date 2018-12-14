@@ -1,5 +1,8 @@
 class Element3d{
-    constructor(width, height, type="",obj='',beautify='', ratio = null){
+    constructor(width, height, type="",obj='',beautify='', ratio = null, DOM){
+        //where you put the canvas 
+        this.dom= DOM 
+
         //window height and width
         this.width = width
         this.height = height
@@ -13,10 +16,14 @@ class Element3d{
         //scale of this object
         this.ratio = ratio
 
+        this.meshs = []
+
         this.setup()
         this.setLight()
         this.objectloading()
         this.loop()
+
+
     }
 
     setup(){
@@ -28,14 +35,14 @@ class Element3d{
         this.renderer = new THREE.WebGLRenderer({ alpha: true })
         this.renderer.setSize( this.width,this.height )
         this.renderer.setClearColor(0xffffff, 0)
-        document.body.appendChild( this.renderer.domElement)
+        this.dom.appendChild( this.renderer.domElement)
 
 
         //ORBIT CONTROL SETUP   
         let controls = new THREE.OrbitControls(this.camera, this.renderer.domElement)
         controls.enableDamping = true
         controls.dampingFactor = 0.25
-        controls.enableZoom = true
+        controls.enableZoom = false
     }
     setLight(){
         let keyLight = new THREE.DirectionalLight(new THREE.Color('hsl(255, 100%, 100%)'), 1.0)
@@ -125,6 +132,22 @@ class Element3d{
             this.renderer.render(this.scene, this.camera)
         }
         animate()
+    }
+    
+    resize(){
+
+
+        this.width = window.innerWidth
+        this.height = window.innerHeight
+
+
+        this.camera.aspect = this.width / this.height
+        this.camera.updateProjectionMatrix()
+
+        this.renderer.setSize( window.innerWidth, window.innerHeight )
+
+    
+        
     }
     
 }
