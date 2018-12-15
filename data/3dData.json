@@ -18,7 +18,7 @@
         "obj": "./models/cb/model.obj",
         "berautify": "./models/cb/materials.mtl",
         "type": "mtl",
-        "ratio": 0.6
+        "ratio": 0.003
     },
     "glasses": 
     {
@@ -39,6 +39,13 @@
         "obj": "./models/phone/Phone_01.obj",
         "berautify": "./models/phone/Phone_01.mtl",
         "type": "mtl",
+        "ratio": 0.1
+    },
+    "phone3":
+    {
+        "obj": "./models/phone/mobile-phone.obj",
+        "berautify": "./models/phone/phone.png",
+        "type": "png",
         "ratio": 0.1
     },
     "watch": 

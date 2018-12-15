@@ -32,6 +32,7 @@ class Element3d{
         this.camera = new THREE.PerspectiveCamera( 75, this.width/this.height)// a voir genre vraiment 
         this.camera.position.z = -3
 
+
         this.renderer = new THREE.WebGLRenderer({ alpha: true })
         this.renderer.setSize( this.width,this.height )
         this.renderer.setClearColor(0xffffff, 0)
@@ -42,24 +43,34 @@ class Element3d{
         let controls = new THREE.OrbitControls(this.camera, this.renderer.domElement)
         controls.enableDamping = true
         controls.dampingFactor = 0.25
-        controls.enableZoom = false
+        controls.enableZoom = true
     }
     setLight(){
-        let keyLight = new THREE.DirectionalLight(new THREE.Color('hsl(255, 100%, 100%)'), 1.0)
-        keyLight.position.set(1, 0, 1)
+        let keyLight = new THREE.DirectionalLight(new THREE.Color('hsl(0, 100%, 90%)'), 0.5)// voir ou changer, la lumière a discuter
+        keyLight.position.set(1, 1, 1)
 
-        let fillLight = new THREE.DirectionalLight(new THREE.Color('hsl(255, 100%, 100%)'), 1.0)
+        let fillLight = new THREE.DirectionalLight(new THREE.Color('hsl(0, 100%, 90%)'), 0.5)// voir ou changer, la lumière a discuter
         fillLight.position.set(1.5, 1, 0.5)
 
         let ambientLight = new THREE.AmbientLight(0xffffff)
 
         let backLight = new THREE.DirectionalLight(0x000000, 1.0)
         backLight.position.set(100, 0, -100).normalize()
+        
+        //back lights
+        let backLightRight = new THREE.DirectionalLight(new THREE.Color('hsl(0, 100%, 90%)'), 0.5)// voir ou changer, la lumière a discuter
+        backLightRight.position.set(-1,-1,-1)
+        
+        let backLightLeft = new THREE.DirectionalLight(new THREE.Color('hsl(0, 100%, 90%)'), 0.5)// voir ou changer, la lumière a discuter
+        backLightLeft.position.set(-1.5,-1,-1.5)
 
+        // lights add to scene
         this.scene.add(keyLight)
         this.scene.add(fillLight)
         this.scene.add(ambientLight)
         this.scene.add(backLight)
+        this.scene.add(backLightLeft)
+        this.scene.add(backLightRight)
     }
 
     objectloading(){
@@ -78,6 +89,7 @@ class Element3d{
                     object.scale.set(this.ratio, this.ratio,this.ratio)
                     this.scene.add(object)
                     this.pngLoad(object)
+                    
                 })
                 break
 
@@ -144,7 +156,7 @@ class Element3d{
         this.camera.aspect = this.width / this.height
         this.camera.updateProjectionMatrix()
 
-        this.renderer.setSize( window.innerWidth, window.innerHeight )
+        this.renderer.setSize( window.innerWidth, window.innerHeight)
 
     
         
