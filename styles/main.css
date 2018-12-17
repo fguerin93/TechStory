@@ -1,3 +1,181 @@
+/*html, body{
+    height: 100%;
+    width: 100%;
+}*/
+.section {
+    /*height: 100%;
+    width: 100%;
+    position: relative;*/
+}
+.section .techno-title {
+    font-family: 'Staatliches', cursive;
+    font-size: 3vw;
+    color: #fff;
+    position: absolute;
+    top: 9vh;
+    left: 50vw;
+    transform: translate(-50%, -50%);
+    user-select: none;
+}
+.section .techno-3delement {
+    height: 100vh;
+    width: 100vh;
+}
+.section .techno-discover .discover-button {
+    position: absolute;
+    bottom: 15vh;
+    left: 50vw;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1vw;
+    border-radius: 28px;
+    box-shadow: 4px 4px 15px 0px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    user-select: none;
+    height: 5vh;
+    width: 9.5vw;
+}
+.section .techno-footer {
+    position: absolute;
+    bottom: 2vh;
+    left: 50vw;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: row;
+    color: #fff;
+}
+.section .techno-footer a {
+    text-decoration: none;
+    font-family: 'Roboto', sans-serif;
+    font-size: 0.9vw;
+    margin: 0 10px 0 10px;
+    user-select: none;
+}
+.section .techno-footer i {
+    transform: scale(0.45);
+}
+.section .next-slide {
+    width: 5vw;
+    height: 10vh;
+    background-color: white;
+    position: absolute;
+    top: 50vh;
+    left: 97.5vw;
+    transform: translate(-50%, -50%);
+    border-top-left-radius: 50px;
+    border-bottom-left-radius: 50px;
+    cursor: pointer;
+    box-shadow: 4px 4px 15px 0px rgba(0, 0, 0, 0.2);
+    font-family: 'Roboto', sans-serif;
+}
+
+.slide {
+    display: flex;
+    flex-direction: column;
+}
+.slide .old-techno-content {
+    background-color: #fff;
+    height: 75vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: row;
+}
+.slide .old-techno-content .old-techno-left {
+    height: 75vh;
+    width: 30vw;
+}
+.slide .old-techno-content .old-techno-left .old-techno-info {
+    height: 37.5vh;
+    width: 30vw;
+    background: radial-gradient(rgba(26, 26, 29, 0.9), #1a1a1d);
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+    flex-direction: column;
+    color: white;
+    padding-right: 5vw;
+}
+.slide .old-techno-content .old-techno-left .old-techno-info .techno-date {
+    font-family: 'Roboto', sans-serif;
+    font-size: 2vw;
+}
+.slide .old-techno-content .old-techno-left .old-techno-info .techno-name {
+    font-family: 'Staatliches', cursive;
+    font-size: 2.8vw;
+}
+.slide .old-techno-content .old-techno-left .old-techno-info .techno-author {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.8vw;
+}
+.slide .old-techno-content .old-techno-left .old-techno-visual {
+    height: 37.5vh;
+    width: 30vw;
+    background-color: grey;
+    overflow: hidden;
+}
+.slide .old-techno-content .old-techno-left .old-techno-visual img {
+    height: 100%;
+    width: 100%;
+    -webkit-user-drag: none;
+}
+.slide .old-techno-content .old-techno-right .old-techno-text {
+    height: 75vh;
+    width: 70vw;
+    background-color: white;
+    overflow: hidden;
+}
+.slide .old-techno-content .old-techno-right .old-techno-text img {
+    height: 100%;
+    width: 100%;
+    -webkit-user-drag: none;
+}
+.slide .timeline-content {
+    height: 25vh;
+    width: 100vw;
+}
+
+.aviation {
+    background: radial-gradient(rgba(52, 152, 219, 0.5), #3498db);
+}
+.aviation .discover-button {
+    color: #3498db;
+}
+
+.watchmaking {
+    background: radial-gradient(rgba(26, 188, 156, 0.5), #1abc9c);
+}
+.watchmaking .discover-button {
+    color: #1abc9c;
+}
+
+.paymentmethod {
+    background: radial-gradient(rgba(231, 76, 60, 0.5), #e74c3c);
+}
+.paymentmethod .discover-button {
+    color: #e74c3c;
+}
+
+.telephony {
+    background: radial-gradient(rgba(46, 204, 113, 0.5), #2ecc71);
+}
+.telephony .discover-button {
+    color: #2ecc71;
+}
+
+#fp-nav {
+    margin-left: 1vw;
+}
+#fp-nav ul li {
+    margin: 18px 7px;
+    color: red;
+}
+#fp-nav ul li a span {
+    background: white !important;
+}
+#fp-nav ul li a .fp-sr-only {
+    font-family: 'Roboto', sans-serif;
+}
 
 
 /**

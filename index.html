@@ -1,27 +1,235 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="styles/main.css">
-    <link rel="stylesheet" href="styles/reset.min.css">
-    <title>TECHSTORY</title>
-</head>
-<body>
-    <div class="loading-container">
-        <div class="sentence-container">
-            <p class="sentence first">Bienvenue dans une expérience immersive où la compréhension des technologies qui nous entourent se dévoile...</p>
-            <p class="sentence second">Parcourez les strates de nos technologies en remontant le temps ...</p>
-            <p class="sentence third">Et plongez dans un monde où les technologies s’approprient les découvertes du passé.</p>
-        </div>
-        <button class="skip-button">
-            <p>Skip the intro</p>
-        </button>
-        <div class="load-bar"></div>
-    </div>
+<html lang="fr">
 
-    
+<head>
+    <meta charset="utf-8">
+    <title>Tech Story</title>
+    <meta name="Description" content="" />
+    <meta name="keywords" content="">
+    <meta name="author" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--<link rel="icon" href="images/favicon.ico" type="image/ico">-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Roboto|Staatliches" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.0.3/fullpage.css"/>
+    <link rel="stylesheet" href="styles/reset.min.css">
+    <link rel="stylesheet" href="styles/main.css"/>
+</head>
+
+<body>
+    <div id="fullpage">
+        <!--Section AVIATION-->
+        <div class="section aviation">
+            <div class="slide">
+                <div class="techno-title">L'aeronautique</div>
+                <div class="techno-3delement">
+                    <div class="plane"></div>
+                </div>
+                <div class="techno-discover">
+                    <button class="discover-button">Découvrir</button>
+                </div>
+                <ul class="techno-footer">
+                    <li><a href="#">Tech Story</a></li>
+                    <i class="fas fa-circle"></i>
+                    <li><a href="#">Partager</a></li>
+                    <i class="fas fa-circle"></i>
+                    <li><a href="#">A propos</a></li>
+                </ul>
+                <button class="next-slide" onclick="fullpage_api.moveSlideRight();"><span style="font-size: 2vw; color: rgb(52, 152, 219);"><i class="fas fa-angle-right"></i></span></button>
+            </div>
+            <!--Section AVIATION - Slide 1-->
+            <div class="slide">
+                <div class="old-techno-content">
+                    <div class="old-techno-left">
+                        <div class="old-techno-info">
+                            <div class="techno-date">1939</div>
+                            <div class="techno-name">L'Avion a réaction</div>
+                            <div class="techno-author">Henry Coanda</div>
+                        </div>
+                        <div class="old-techno-visual">
+                            <img data-src="images/aeronautique/avionreaction2.jpg" alt="Photographie d'avion à réaction">
+                        </div>
+                    </div>
+                    <div class="old-techno-right">
+                        <div class="old-techno-text">
+                            <img data-src="images/aeronautique/avionreaction.jpg" alt="Photographie d'avion à réaction">
+                        </div>
+                    </div>
+                </div>
+                <div class="timeline-content">
+                    
+                </div>
+            </div>
+            <!--Section AVIATION - Slide 2-->
+            <div class="slide">
+                <div class="old-techno-content">
+                    <div class="old-techno-left">
+                        <div class="old-techno-info">
+                            <div class="techno-date">1915</div>
+                            <div class="techno-name">Le fuselage en métal</div>
+                            <div class="techno-author">Junkers-Fokkers</div>
+                        </div>
+                        <div class="old-techno-visual">
+                            <img data-src="images/aeronautique/fuselagemetal2.jpg" alt="Photographie d'avion à réaction">
+                        </div>
+                    </div>
+                    <div class="old-techno-right">
+                        <div class="old-techno-text">
+                            <img data-src="images/aeronautique/fuselagemetal.jpg" alt="Photographie d'avion à réaction">
+                        </div>
+                    </div>
+                </div>
+                <div class="timeline-content">
+                    
+                </div>
+            </div>
+            <!--Section AVIATION - Slide 3-->
+            <div class="slide">
+                <div class="old-techno-content">
+                    <div class="old-techno-left">
+                        <div class="old-techno-info">
+                            <div class="techno-date">1890</div>
+                            <div class="techno-name">L'aéroplane d'Ader</div>
+                            <div class="techno-author">Clément Ader</div>
+                        </div>
+                        <div class="old-techno-visual">
+                            <img data-src="images/aeronautique/aeroplane2.png" alt="Photographie d'avion à réaction">
+                        </div>
+                    </div>
+                    <div class="old-techno-right">
+                        <div class="old-techno-text">
+                            <img data-src="images/aeronautique/aeroplane.jpg" alt="Photographie d'avion à réaction">
+                        </div>
+                    </div>
+                </div>
+                <div class="timeline-content">
+                    
+                </div>
+            </div>
+            <!--Section AVIATION - Slide 4-->
+            <div class="slide">
+                <div class="old-techno-content">
+                    <div class="old-techno-left">
+                        <div class="old-techno-info">
+                            <div class="techno-date">1405</div>
+                            <div class="techno-name">La machine volante</div>
+                            <div class="techno-author">Léonard da Vinci</div>
+                        </div>
+                        <div class="old-techno-visual">
+                            <img data-src="images/aeronautique/machinevolante2.jpg" alt="Photographie d'avion à réaction">
+                        </div>
+                    </div>
+                    <div class="old-techno-right">
+                        <div class="old-techno-text">
+                            <img data-src="images/aeronautique/machinevolante.png" alt="Photographie d'avion à réaction">
+                        </div>
+                    </div>
+                </div>
+                <div class="timeline-content">
+                    
+                </div>
+            </div>
+        </div>
+        <!--Section WATCH-->
+        <div class="section watchmaking">
+            <div class="slide">
+                <div class="techno-title">L'horlogerie</div>
+                <div class="techno-3delement">
+                    <div class="watch"></div>
+                </div>
+                <div class="techno-discover">
+                    <button class="discover-button">Découvrir</button>
+                </div>
+                <ul class="techno-footer">
+                    <li><a href="#">Tech Story</a></li>
+                    <i class="fas fa-circle"></i>
+                    <li><a href="#">Partager</a></li>
+                    <i class="fas fa-circle"></i>
+                    <li><a href="#">A propos</a></li>
+                </ul>
+                <button class="next-slide" onclick="fullpage_api.moveSlideRight();"><span style="font-size: 2vw; color: rgb(26, 188, 156);"><i class="fas fa-angle-right"></i></span></button>
+            </div>
+            <!--Section AVIATION - Slide 1-->
+            <div class="slide">
+                <div class="old-techno-content">
+                    <div class="old-techno-left">
+                        <div class="old-techno-info">
+                            <div class="techno-date">1939</div>
+                            <div class="techno-name">L'Avion a réaction</div>
+                            <div class="techno-author">Henry Coanda</div>
+                        </div>
+                        <div class="old-techno-visual">
+                            <img data-src="images/aeronautique/avionreaction2.jpg" alt="Photographie d'avion à réaction">
+                        </div>
+                    </div>
+                    <div class="old-techno-right">
+                        <div class="old-techno-text">
+                            <img data-src="images/aeronautique/avionreaction.jpg" alt="Photographie d'avion à réaction">
+                        </div>
+                    </div>
+                </div>
+                <div class="timeline-content">
+                    
+                </div>
+            </div>
+        </div>
+        <!--Section PAYMENT METHOD-->
+        <div class="section paymentmethod">
+            <div class="slide">
+                <div class="techno-title">Les moyens de paiement</div>
+                <div class="techno-3delement">
+                    <div class="card"></div>
+                </div>
+                <div class="techno-discover">
+                    <button class="discover-button">Découvrir</button>
+                </div>
+                <ul class="techno-footer">
+                    <li><a href="#">Tech Story</a></li>
+                    <i class="fas fa-circle"></i>
+                    <li><a href="#">Partager</a></li>
+                    <i class="fas fa-circle"></i>
+                    <li><a href="#">A propos</a></li>
+                </ul>
+                <button class="next-slide" onclick="fullpage_api.moveSlideRight();"><span style="font-size: 2vw; color: rgb(231, 76, 60);"><i class="fas fa-angle-right"></i></span></button>
+            </div>
+            <div class="slide">
+                
+            </div>
+        </div>
+        <!--Section TELEPHONY-->
+        <div class="section telephony">
+            <div class="slide">
+                <div class="techno-title">La Téléphonie</div>
+                <div class="techno-3delement">
+                    <div class="phone"></div>
+                </div>
+                <div class="techno-discover">
+                    <button class="discover-button">Découvrir</button>
+                </div>
+                <ul class="techno-footer">
+                    <li><a href="#">Tech Story</a></li>
+                    <i class="fas fa-circle"></i>
+                    <li><a href="#">Partager</a></li>
+                    <i class="fas fa-circle"></i>
+                    <li><a href="#">A propos</a></li>
+                </ul>
+                <button class="next-slide" onclick="fullpage_api.moveSlideRight();"><span style="font-size: 2vw; color: rgb(46, 204, 113);"><i class="fas fa-angle-right"></i></span></button>
+            </div>
+            <!--Section TELEPHONY - Slide 1-->
+            <div class="slide">
+                
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.0.3/fullpage.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.0.3/fullpage.extensions.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.0.3/vendors/easings.js"></script>
+    <script src="scripts/libs/three.min.js"></script>
+    <script src="scripts/libs/objloader.js"></script>
+    <script src="scripts/libs/mtlloader.js"></script>
+    <script src="scripts/libs/OrbitControls.js"></script>
+    <script src="scripts/cutomLibs/3dClass.js"></script>
     <script src="scripts/app.js"></script>
 </body>
+
 </html>
