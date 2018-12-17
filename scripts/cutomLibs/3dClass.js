@@ -1,5 +1,5 @@
 class Element3d{
-    constructor(width, height, type="",obj='',beautify='', ratio = null, DOM){
+    constructor(width, height, type="",obj='',texture='', ratio = null, DOM){
         //where you put the canvas 
         this.dom= DOM 
 
@@ -9,7 +9,7 @@ class Element3d{
 
         //path of the png/mlt and obj file
         this.obj = obj
-        this.beautify = beautify
+        this.texture = texture
         //type of the texture
         this.type = type
 
@@ -35,6 +35,7 @@ class Element3d{
 
         this.renderer = new THREE.WebGLRenderer({ alpha: true })
         this.renderer.setSize( this.width,this.height )
+        this.renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
         this.renderer.setClearColor(0xffffff, 0)
         this.dom.appendChild( this.renderer.domElement)
 
@@ -43,7 +44,7 @@ class Element3d{
         let controls = new THREE.OrbitControls(this.camera, this.renderer.domElement)
         controls.enableDamping = true
         controls.dampingFactor = 0.25
-        controls.enableZoom = true
+        controls.enableZoom = false
     }
     setLight(){
         let keyLight = new THREE.DirectionalLight(new THREE.Color('hsl(0, 100%, 90%)'), 0.5)// voir ou changer, la lumière a discuter
@@ -74,6 +75,8 @@ class Element3d{
     }
 
     objectloading(){
+        const objLoader =  new THREE.OBJLoader()
+
         //texture manager
         switch(this.type){
             case "mtl":
@@ -83,7 +86,6 @@ class Element3d{
 
             case "png":
                 console.log("PNG")
-                const objLoader =  new THREE.OBJLoader()
 
                 objLoader.load(this.obj, (object)=>{
                     object.scale.set(this.ratio, this.ratio,this.ratio)
@@ -92,12 +94,25 @@ class Element3d{
                     
                 })
                 break
+            
+            case "material":
+                console.log("MATERIAL")
+
+                objLoader.load(this.obj, (object)=>{
+                    object.scale.set(this.ratio, this.ratio,this.ratio)
+                    for(const _child of object.children)
+                    {
+                        _child.material = this.texture
+                    }
+                    this.scene.add(object)
+                    
+                })
+                break
 
             default:
                 console.log("NONE")
-                const objLoaderN =  new THREE.OBJLoader()
-
-                objLoaderN.load(this.obj, (object)=>{
+                
+                objLoader.load(this.obj, (object)=>{
                     object.scale.set(this.ratio, this.ratio,this.ratio)
                     this.scene.add(object)
                 })
@@ -109,7 +124,7 @@ class Element3d{
     pngLoad(object){
         let textureLoader = new THREE.TextureLoader()
 
-        textureLoader.load(this.beautify, function(texture){
+        textureLoader.load(this.texture, function(texture){
             const material = new THREE.MeshStandardMaterial({ map: texture })
             for(const _child of object.children){
                 _child.material = material
@@ -122,7 +137,7 @@ class Element3d{
     mtlLoad(){
         let mtlTextureLoader = new THREE.MTLLoader() 
 
-        mtlTextureLoader.load(this.beautify, (texture)=>{
+        mtlTextureLoader.load(this.texture, (texture)=>{
             texture.preload()
             const objLoader =  new THREE.OBJLoader()
             
