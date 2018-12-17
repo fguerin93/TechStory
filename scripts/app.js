@@ -1,9 +1,9 @@
 const dom = document.querySelector('.plop')
-//const plane = new Element3d(window.innerWidth, window.innerHeight, "png", './models/airplane2/1405 Plane.obj', './models/airplane2/1405 Plane.png', 0.08, dom)
+const plane = new Element3d(window.innerWidth, window.innerHeight, "png", './models/airplane/Airplane.obj', './models/airplane/Airplane Texture.png', 0.01, dom, {x:30,y:10 ,z: 10})
 
-// const cb = new Element3d(window.innerWidth, window.innerHeight, "mtl", './models/cb/model.obj', './models/cb/materials.mtl', 0.03, dom)
+// const cb = new Element3d(window.innerWidth, window.innerHeight, "mtl", './models/cb/model.obj', './models/cb/materials.mtl', 0.03, dom, {x:-8,z:0})
 
-const glasses = new Element3d(window.innerWidth, window.innerHeight, "material", './models/glasses/Glasses_01.obj', new THREE.MeshLambertMaterial({ color: 0x6c92dd }), 0.05, dom)
+// const glasses = new Element3d(window.innerWidth, window.innerHeight, "material", './models/glasses/Glasses_01.obj', new THREE.MeshLambertMaterial({ color: 0x6c92dd }), 0.05, dom)
 
 
 
@@ -11,7 +11,7 @@ const glasses = new Element3d(window.innerWidth, window.innerHeight, "material",
 //     plane.resize()
 // })
 
-
+// function to kill a canvas and replace it with a other
 let killTo = (toDie)=>{
     delete toDie
     const deadCanvas = dom.querySelector('canvas')

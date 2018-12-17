@@ -1,5 +1,23 @@
+/* Element3d class: prototype of the constructor:
+    - width -> width of the model canvas
+    - height -> height of the model canvas
+    - type -> string with the type of the texture :
+        - "mtl" -> for mtl texture 
+        - "png" -> for png texture
+        - "material" -> for custom THREE.js texture
+        - "" -> object without texture
+    - obj -> string with the path of the .obj model file
+    - texture -> texture of the .obj file, could be :
+        - a string containing the path of an ".png" file
+        - a string containing the path of an  ".mtl" file
+        - a new THREE.js Mesh Material
+    - ratio -> float number with the scale of the model
+    - DOM -> DOM element where the canvas will be create
+    - camPos -> an object with x / y / z of the camera position
+*/
+
 class Element3d{
-    constructor(width, height, type="",obj='',texture='', ratio = null, DOM){
+    constructor(width, height, type="",obj="",texture, ratio = null, DOM, camPos={x:0,y:0,z:-3}){
         //where you put the canvas 
         this.dom= DOM 
 
@@ -16,23 +34,34 @@ class Element3d{
         //scale of this object
         this.ratio = ratio
 
+        //position camera
+        this.camPos = {
+            x: camPos.x !=undefined ? camPos.x : 0,
+            y: camPos.y !=undefined ? camPos.y : 0,
+            z: camPos.z !=undefined ? camPos.z : -3
+        }
+
+
         this.meshs = []
 
+        //methods call
         this.setup()
         this.setLight()
         this.objectloading()
         this.loop()
-
 
     }
 
     setup(){
         this.scene = new THREE.Scene()
 
-        this.camera = new THREE.PerspectiveCamera( 75, this.width/this.height)// a voir genre vraiment 
-        this.camera.position.z = -3
+        //camera management
+        this.camera = new THREE.PerspectiveCamera( 75, this.width/this.height)
+        this.camera.position.x = this.camPos.x
+        this.camera.position.y = this.camPos.y
+        this.camera.position.z = this.camPos.z
 
-
+        //rendering management
         this.renderer = new THREE.WebGLRenderer({ alpha: true })
         this.renderer.setSize( this.width,this.height )
         this.renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
@@ -45,7 +74,10 @@ class Element3d{
         controls.enableDamping = true
         controls.dampingFactor = 0.25
         controls.enableZoom = false
+        controls.enablePan = false
+        controls.enableKeys = false
     }
+    //lights methods
     setLight(){
         let keyLight = new THREE.DirectionalLight(new THREE.Color('hsl(0, 100%, 90%)'), 0.5)// voir ou changer, la lumière a discuter
         keyLight.position.set(1, 1, 1)
@@ -74,19 +106,22 @@ class Element3d{
         this.scene.add(backLightRight)
     }
 
+    /*load the object, different type of object:
+        - "mtl" -> for mtl texture 
+        - "png" -> for png texture
+        - "material" -> for custom THREE.js texture
+        - "" -> object without texture
+    */
     objectloading(){
         const objLoader =  new THREE.OBJLoader()
 
         //texture manager
         switch(this.type){
             case "mtl":
-                console.log("MTL")
                     this.mtlLoad()
                 break
 
             case "png":
-                console.log("PNG")
-
                 objLoader.load(this.obj, (object)=>{
                     object.scale.set(this.ratio, this.ratio,this.ratio)
                     this.scene.add(object)
@@ -96,12 +131,9 @@ class Element3d{
                 break
             
             case "material":
-                console.log("MATERIAL")
-
                 objLoader.load(this.obj, (object)=>{
                     object.scale.set(this.ratio, this.ratio,this.ratio)
-                    for(const _child of object.children)
-                    {
+                    for(const _child of object.children){
                         _child.material = this.texture
                     }
                     this.scene.add(object)
@@ -110,8 +142,6 @@ class Element3d{
                 break
 
             default:
-                console.log("NONE")
-                
                 objLoader.load(this.obj, (object)=>{
                     object.scale.set(this.ratio, this.ratio,this.ratio)
                     this.scene.add(object)
@@ -162,8 +192,6 @@ class Element3d{
     }
     
     resize(){
-
-
         this.width = window.innerWidth
         this.height = window.innerHeight
 
@@ -172,9 +200,7 @@ class Element3d{
         this.camera.updateProjectionMatrix()
 
         this.renderer.setSize( window.innerWidth, window.innerHeight)
-
-    
-        
+     
     }
     
 }
