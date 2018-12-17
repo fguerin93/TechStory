@@ -77,7 +77,7 @@ var myFullpage = new fullpage('#fullpage', {
 
 
 
-const dom = document.querySelector('.plane')
+/*const dom = document.querySelector('.plane')
 const dom1 = document.querySelector('.watch')
 const dom2 = document.querySelector('.card')
 const dom3 = document.querySelector('.phone')
@@ -99,7 +99,7 @@ let killTo = (toDie)=>{
     deadCanvas.remove(deadCanvas)
     const object = new Element3d(window.innerWidth, window.innerHeight, "mtl", './models/cb/model.obj', './models/cb/materials.mtl', 0.03, dom)
     return object
-}
+}*/
 
 
 /*const skrllr = new Skrllr('main', {
