@@ -7,6 +7,7 @@
     width: 100%;
     position: relative;*/
     z-index: 0;
+    position: relative;
 }
 .section .techno-title {
     font-family: 'Staatliches', cursive;
@@ -133,7 +134,7 @@
     position: relative;
 }
 .slide .old-techno-content .old-techno-right .old-techno-text .text-container {
-    background-color: rgba(0, 0, 0, 0.40);
+    background-color: rgba(0, 0, 0, 0.50);
     height: 100%;
     width: 100%;
     position: absolute;
@@ -155,6 +156,21 @@
 .slide .timeline-content {
     height: 25vh;
     width: 100vw;
+    position: relative;
+}
+.slide .timeline-content .next-slide{
+    width: 5vw;
+    height: 10vh;
+    background-color: white;
+    position: absolute;
+    top: 50vh;
+    left: 97.5vw;
+    transform: translate(-50%, -50%);
+    border-top-left-radius: 50px;
+    border-bottom-left-radius: 50px;
+    cursor: pointer;
+    box-shadow: 4px 4px 15px 0px rgba(0, 0, 0, 0.2);
+    font-family: 'Roboto', sans-serif;
 }
 
 
@@ -218,9 +234,14 @@
     height: 100vh;
     width: 100vw;
     background: radial-gradient(rgb(62, 62, 70), rgb(26, 26, 29, 1.00));
-    position: fixed;
+    position: absolute;
+    top: 0;
+    left: 0;
     z-index: 10;
-    display: none;
+    opacity: 0;
+    transition: opacity 0.3s ease-out;
+    will-change: opacity;
+    transform: translateX(-100%)
 }
 
 .techstory-popup-title{
@@ -338,5 +359,13 @@ Loading container
     background: #ffffff;
     transform-origin: 0;
     transform: scaleX(0);
+}
 
+
+/*
+* DISPLAY
+*/
+.techstory-popup.display{
+    opacity: 1;
+    transform: translateX(0%)
 }

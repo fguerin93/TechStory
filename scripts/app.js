@@ -37,7 +37,7 @@ var myFullpage = new fullpage('#fullpage', {
 	offsetSections: false,
 	resetSliders: true,
 	fadingEffect: false,
-	normalScrollElements: '.techstory-popup',
+	normalScrollElements: '',
 	scrollOverflow: false,
 	scrollOverflowReset: false,
 	scrollOverflowOptions: null,
@@ -56,7 +56,7 @@ var myFullpage = new fullpage('#fullpage', {
 	sectionsColor : ['', ''],
 	paddingTop: '0',
 	paddingBottom: '0',
-	fixedElements: '',
+	fixedElements: '.techstory-popup',
 	responsiveWidth: 0,
 	responsiveHeight: 0,
 	responsiveSlides: false,
@@ -122,12 +122,12 @@ popup.$techstoryButtonClose = popup.$techstoryPopup.querySelector('.techstory-po
 for(let i = 0; i < popup.$techstoryButton.length; i++){
 	popup.$techstoryButton[i].addEventListener('click', () => {
 		console.log('bouh')
-		popup.$techstoryPopup.style.display = 'block'
-
+		/*popup.$techstoryPopup.style.display = 'block'*/
+		popup.$techstoryPopup.classList.add('display')
 	})
 }
 
 popup.$techstoryButtonClose.addEventListener('click', () => {
-	popup.$techstoryPopup.style.display = 'none'
+	popup.$techstoryPopup.classList.remove('display')
 })
 
