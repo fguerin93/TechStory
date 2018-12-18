@@ -228,7 +228,7 @@
 * NAVIGATION
 */
 
-#fp-nav {
+/*#fp-nav {
     margin-left: 1vw;
     z-index: 0;
 }
@@ -241,7 +241,7 @@
 }
 #fp-nav ul li a .fp-sr-only {
     font-family: 'Roboto', sans-serif;
-}
+}*/
 
 
 /*
@@ -259,9 +259,9 @@
     left: 0;
     z-index: 10;
     opacity: 0;
-    transition: opacity 0.3s ease-out;
+    transition: all 0.3s ease-out;
     will-change: opacity;
-    transform: translateX(-100%)
+    transform: translateY(-100%)
 }
 
 .techstory-popup-title{
@@ -320,9 +320,9 @@
     left: 0;
     z-index: 10;
     opacity: 0;
-    transition: opacity 0.3s ease-out;
+    transition: all 0.3s ease-out;
     will-change: opacity;
-    transform: translateX(-100%)
+    transform: translateY(-100%)
 }
 
 .about-popup-title{
@@ -380,7 +380,8 @@
     background : -webkit-radial-gradient(center, ellipse, rgb(62, 62, 70) 0%, rgb(26, 26, 29) 100%);
     z-index: 20;
     opacity: 0;
-    transform: translateX(-100%);
+    transform: translateY(-100%);
+    transition: all 0.5s ease-out;
 }
 
 .loading-container .sentence-container
@@ -607,12 +608,12 @@
 */
 .techstory-popup.display{
     opacity: 1;
-    transform: translateX(0%);
+    transform: translateY(0%);
 }
 
 .about-popup.display{
     opacity: 1;
-    transform: translateX(0%);
+    transform: translateY(0%);
 }
 
 .element3d{
@@ -623,7 +624,5 @@
 }
 .loading-container.display{
     opacity: 1;
-    transform: translateX(0%);
-    transition: opacity 0.3s ease-out;
-    will-change: opacity;
+    transform: translateY(0%);
 }

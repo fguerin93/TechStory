@@ -209,7 +209,7 @@ for(let i = 0; i<$loadingIcons.length;i++)
 }
 
 const hideLoading = () => {
-	$loadingContainer.style.display = 'none'
+	$loadingContainer.classList.remove('display')
 }
 
 

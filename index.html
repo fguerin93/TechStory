@@ -12,7 +12,8 @@
     <link rel="icon" href="images/favicon.ico" type="image/ico">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Roboto|Staatliches" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.0.3/fullpage.css"/>
+    <!--<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.0.3/fullpage.css"/>-->
+    <link rel="stylesheet" href="styles/fullpage.css">
     <link rel="stylesheet" href="styles/reset.min.css">
     <link rel="stylesheet" href="styles/main.css"/>
 </head>
@@ -195,7 +196,7 @@
     <div class="techstory-popup">
         <div class="techstory-popup-title">TECH STORY</div>
         <p class="techstory-popup-text">
-            Comment l’évolution technologique découle-t-elle d’une simple succession de découvertes ?</br>
+            Comment l’évolution technologique découle-t-elle d’une simple succession de découvertes ?<br><br>
             Notre concept est de réaliser un support digital web, ludique et immersif, présentant de manière concise les technologies
             que nous estimons pertinentes pour enrichir la culture technologique de chacun ou bien pour les plus technophiles d’entre
             vous, revoir certaines notions.
@@ -278,6 +279,12 @@
                     </div>
                     <div class="old-techno-right">
                         <div class="old-techno-text">
+                            <div class="text-container">
+                                <button onclick="fullpage_api.moveTo('1', 0);" class="return-techno"><span><i class="fas fa-angle-left"></i></span>Retour au menu</button>
+                                <p>Le Junkers J.I était un avion biplan et biplace conçu pour l’attaque au sol et l’observation. Évolution du tout premier avion entièrement construit en métal, le monoplan Junkers J 1 de 1915, il n’avait que la partie arrière qui fut entoilée, sur un châssis de tubes en duraluminium, tandis que toute la portion avant du fuselage était blindée.<br><br>
+                                    Le concept d’avion métallique et blindé mis en œuvre pour le Junkers J.I a été envisagé par la firme Junkers-Fokkers Flugzeugwerke A.G. avant la Première Guerre Mondiale pour l’attaque au sol. Cela aurait rendu l’avion presque invulnérable, puisque le concept d’avion de chasse n’existait pas encore.
+                                </p>
+                            </div>
                             <img data-src="images/aeronautique/fuselagemetal.jpg" alt="Photographie du fuselage en métal">
                         </div>
                     </div>
@@ -301,6 +308,13 @@
                     </div>
                     <div class="old-techno-right">
                         <div class="old-techno-text">
+                            <div class="text-container">
+                                <button onclick="fullpage_api.moveTo('1', 0);" class="return-techno"><span><i class="fas fa-angle-left"></i></span>Retour au menu</button>
+                                <p>Clément Ader, inventeur de la fin du 19ème siècle, s'inspira des plans de Léonard de Vinci et de ses études des machines volantes pour créer le 9 octobre 1890, dans le parc d’un château proche de Paris, le premier engin à moteur et à hélice.<br><br>
+                                    Dénommé Éole, cet engin en forme de chauve-souris permet à l’inventeur français d’accomplir un bond de 50 mètres… À quelques dizaines de centimètres de hauteur.<br>
+                                    Il fut le précurseur des exploits réalisés des années plus tard par les frères Wright.
+                                </p>
+                            </div>
                             <img data-src="images/aeronautique/aeroplane.jpg" alt="Photographie de l'aéroplane d'Ader">
                         </div>
                     </div>
@@ -324,6 +338,13 @@
                     </div>
                     <div class="old-techno-right">
                         <div class="old-techno-text">
+                            <div class="text-container">
+                                <button onclick="fullpage_api.moveTo('1', 0);" class="return-techno"><span><i class="fas fa-angle-left"></i></span>Retour au menu</button>
+                                <p>Entre 1485 et 1490, Léonard de Vinci (qui est au service du duc de Milan Ludovic Sforza à titre d'ingénieur militaire) étudie le vol plané des rapaces.<br><br>
+                                    Après diverses expériences, il abandonne l'idée de l'avion à ailes oscillantes et se consacre à l'étude d'ailes rigides. Il crée alors la vis aérienne (ou hélice ou aile tournante hélicoïde...) avec une simple vis passée au milieu de deux plaques de bois en s'inspirant du principe de la vis d'Archimède, utilisée dès l’Antiquité pour monter de l’eau.<br><br>
+                                    Ses études des ailes volantes sont à la base de que l'on connait aujourd'hui sous le nom d'aéronautique.
+                                </p>
+                            </div>
                             <img data-src="images/aeronautique/machinevolante.png" alt="Photographie de la machine volante">
                         </div>
                     </div>
@@ -348,7 +369,7 @@
                     <i class="fas fa-circle"></i>
                     <li><button href="#">Partager</button></li>
                     <i class="fas fa-circle"></i>
-                    <li><button href="#">A propos</button></li>
+                    <li><button class="about-button" href="#">A propos</button></li>
                 </ul>
                 <button class="next-slide" onclick="fullpage_api.moveSlideRight();"><span style="font-size: 2vw; color: rgb(26, 188, 156);"><i class="fas fa-angle-right"></i></span></button>
             </div>
@@ -460,7 +481,7 @@
                     <i class="fas fa-circle"></i>
                     <li><button href="#">Partager</button></li>
                     <i class="fas fa-circle"></i>
-                    <li><button href="#">A propos</button></li>
+                    <li><button class="about-button" href="#">A propos</button></li>
                 </ul>
                 <button class="next-slide" onclick="fullpage_api.moveSlideRight();"><span style="font-size: 2vw; color: rgb(231, 76, 60);"><i class="fas fa-angle-right"></i></span></button>
             </div>
@@ -483,7 +504,7 @@
                     <i class="fas fa-circle"></i>
                     <li><button href="#">Partager</button></li>
                     <i class="fas fa-circle"></i>
-                    <li><button href="#">A propos</button></li>
+                    <li><button class="about-button" href="#">A propos</button></li>
                 </ul>
                 <button class="next-slide" onclick="fullpage_api.moveSlideRight();"><span style="font-size: 2vw; color: rgb(46, 204, 113);"><i class="fas fa-angle-right"></i></span></button>
             </div>
