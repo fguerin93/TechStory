@@ -295,11 +295,13 @@
     position: absolute;
     width: 100vw;
     height: 100vh;
-    background: radial-gradient(rgb(62, 62, 70), rgb(26, 26, 29, 1.00));
+    /*background: radial-gradient(rgb(62, 62, 70), rgb(26, 26, 29));*/
+    background-image  : -webkit-radial-gradient(10px 50%, circle, rgb(62, 62, 70) 0%, rgb(26, 26, 29) 100%);
+    background-image  : -webkit-radial-gradient(top left, ellipse farthest-corner, rgb(62, 62, 70) 0%, rgb(26, 26, 29) 100%);
+    background : -webkit-radial-gradient(center, ellipse, rgb(62, 62, 70) 0%, rgb(26, 26, 29) 100%);
     z-index: 20;
     opacity: 0;
     transform: translateX(-100%);
-    
 }
 
 .loading-container .sentence-container
