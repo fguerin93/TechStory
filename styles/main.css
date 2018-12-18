@@ -234,7 +234,10 @@
 .techstory-popup{
     height: 100vh;
     width: 100vw;
-    background: radial-gradient(rgb(62, 62, 70), rgb(26, 26, 29, 1.00));
+    /*background: radial-gradient(rgb(62, 62, 70), rgb(26, 26, 29));*/
+    background-image  : -webkit-radial-gradient(10px 50%, circle, rgb(62, 62, 70) 0%, rgb(26, 26, 29) 100%);
+    background-image  : -webkit-radial-gradient(top left, ellipse farthest-corner, rgb(62, 62, 70) 0%, rgb(26, 26, 29) 100%);
+    background : -webkit-radial-gradient(center, ellipse, rgb(62, 62, 70) 0%, rgb(26, 26, 29) 100%);
     position: absolute;
     top: 0;
     left: 0;
@@ -365,7 +368,7 @@
     width: 100%;
     height: 3px;
     left: 0;
-    bottom: 10px;
+    bottom: 0px;
     background: #ffffff;
     transform-origin: 0;
     transform: scaleX(0);
