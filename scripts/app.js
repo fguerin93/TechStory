@@ -93,10 +93,10 @@ const windowPercent = 60
 let canvasWidth = window.innerWidth /100*windowPercent
 let canvasHeight = window.innerHeight/100*windowPercent
 
-const plane = new Element3d(canvasWidth, canvasHeight,windowPercent, "png", './models/airplane2/1405 Plane.obj', './models/airplane2/1405 Plane.png', 0.0300, dom,180)
-const watch = new Element3d(canvasWidth, canvasHeight,windowPercent, "png", './models/watch/Wirst Watch.obj', './models/watch/Wirst Watch Texture.png', 0.0005, dom1,180)
-const card = new Element3d(canvasWidth, canvasHeight,windowPercent, "mtl", './models/cb/model.obj', './models/cb/materials.mtl', 0, dom2, 270, {z:-7})
-const phone = new Element3d(canvasWidth, canvasHeight,windowPercent, "mtl", './models/phone/mobile-phone.obj', './models/phone/mobile-phone.mtl', 0, dom3,180, {x:0,y:0,z:-60}, {y:-15})
+const plane = new Element3d(canvasWidth, canvasHeight,windowPercent, "png", './models/airplane2/1405 Plane.obj', './models/airplane2/1405 Plane.png', 0.0330, dom,180)
+const watch = new Element3d(canvasWidth, canvasHeight,windowPercent, "png", './models/watch/Wirst Watch.obj', './models/watch/Wirst Watch Texture.png', 0.00069, dom1,180)
+const card = new Element3d(canvasWidth, canvasHeight,windowPercent, "mtl", './models/cb/model.obj', './models/cb/materials.mtl', 0, dom2, 270, {z:-4.5})
+const phone = new Element3d(canvasWidth, canvasHeight,windowPercent, "mtl", './models/phone/mobile-phone.obj', './models/phone/mobile-phone.mtl', 0, dom3,180, {z:-30}, {y:-15})
 
 window.addEventListener('resize', ()=>{
 	plane.resize()
