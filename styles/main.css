@@ -47,12 +47,13 @@
     flex-direction: row;
     color: #fff;
 }
-.section .techno-footer a {
+.section .techno-footer button {
     text-decoration: none;
     font-family: 'Roboto', sans-serif;
     font-size: 0.9vw;
     margin: 0 10px 0 10px;
     user-select: none;
+    cursor: pointer;
 }
 .section .techno-footer i {
     transform: scale(0.45);
@@ -263,6 +264,7 @@
     font-size: 1vw;
     color: white;
     text-align: center;
+    line-height: 160%;
 }
 
 
@@ -271,7 +273,6 @@
     bottom: 20vh;
     left: 50vw;
     transform: translate(-50%, -50%);
-    background-color: white;
     font-family: 'Roboto', sans-serif;
     font-size: 1vw;
     border-radius: 28px;
@@ -279,8 +280,9 @@
     cursor: pointer;
     user-select: none;
     height: 5vh;
-    width: 9.5vw;
-    color: black;
+    width: 5vh;
+    border: 2.5px solid white;
+    border-radius: 50%;
 }
 
 /*
