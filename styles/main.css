@@ -54,6 +54,10 @@
     margin: 0 10px 0 10px;
     user-select: none;
     cursor: pointer;
+    transition: color 0.8s ease-in;
+}
+.section .techno-footer button:hover {
+    color:  rgb(238, 238, 238);
 }
 .section .techno-footer i {
     transform: scale(0.45);
@@ -143,6 +147,18 @@
     justify-content: center;
     align-items: center;
 }
+.slide .old-techno-content .old-techno-right .old-techno-text .text-container .return-techno{
+    position: absolute;
+    top: 4vh;
+    right: 2.5vw;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1vw;
+    cursor: pointer;
+}
+.slide .old-techno-content .old-techno-right .old-techno-text .text-container .return-techno span{
+    padding-right: 0.5vw;
+}
 .slide .old-techno-content .old-techno-right .old-techno-text .text-container p {
     color: white;
     font-family: 'Roboto', sans-serif;
@@ -229,7 +245,7 @@
 
 
 /*
-* POP UP
+* POP UP TECHSTORY
 */
 .techstory-popup{
     height: 100vh;
@@ -288,6 +304,66 @@
     border-radius: 50%;
 }
 
+
+/*
+* POP UP ABOUT
+*/
+.about-popup{
+    height: 100vh;
+    width: 100vw;
+    /*background: radial-gradient(rgb(62, 62, 70), rgb(26, 26, 29));*/
+    background-image  : -webkit-radial-gradient(10px 50%, circle, rgb(62, 62, 70) 0%, rgb(26, 26, 29) 100%);
+    background-image  : -webkit-radial-gradient(top left, ellipse farthest-corner, rgb(62, 62, 70) 0%, rgb(26, 26, 29) 100%);
+    background : -webkit-radial-gradient(center, ellipse, rgb(62, 62, 70) 0%, rgb(26, 26, 29) 100%);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    opacity: 0;
+    transition: opacity 0.3s ease-out;
+    will-change: opacity;
+    transform: translateX(-100%)
+}
+
+.about-popup-title{
+    position: absolute;
+    top: 25vh;
+    left: 50vw;
+    transform: translate(-50%, -50%);
+    font-family: 'Staatliches', cursive;
+    font-size: 3vw;
+    color: #fff;
+}
+
+.about-popup-text{
+    position: absolute;
+    bottom: 35vh;
+    left: 50vw;
+    transform: translate(-50%, -50%);
+    font-family: 'Roboto', sans-serif;
+    font-size: 1vw;
+    color: white;
+    text-align: center;
+    line-height: 160%;
+}
+
+
+.about-popup-button-close{
+    position: absolute;
+    bottom: 20vh;
+    left: 50vw;
+    transform: translate(-50%, -50%);
+    font-family: 'Roboto', sans-serif;
+    font-size: 1vw;
+    border-radius: 28px;
+    box-shadow: 4px 4px 15px 0px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    user-select: none;
+    height: 5vh;
+    width: 5vh;
+    border: 2.5px solid white;
+    border-radius: 50%;
+}
 
 /*
 * LOADING CONTAINER
@@ -355,7 +431,7 @@
 .loading-container .skip-button
 {
     font-size: 0.8vw;
-    font-family: helvetica;
+    font-family: 'Roboto', sans-serif;
     color: #ffffff;
     opacity: 0.8;
     cursor: pointer;
@@ -366,7 +442,7 @@
 {
     position: absolute;
     width: 100%;
-    height: 3px;
+    height: 0.25vh;
     left: 0;
     bottom: 0px;
     background: #ffffff;
@@ -518,8 +594,8 @@
     box-shadow: 4px 4px 15px 0px rgba(0, 0, 0, 0.2);
     cursor: pointer;
     user-select: none;
-    height: 5vh;
-    width: 12.5vw;
+    height: 6vh;
+    width: 14vw;
     color: rgb(26, 26, 29, 1.00);
     user-select: none;
     -webkit-user-drag: none;
@@ -530,6 +606,11 @@
 * DISPLAY
 */
 .techstory-popup.display{
+    opacity: 1;
+    transform: translateX(0%);
+}
+
+.about-popup.display{
     opacity: 1;
     transform: translateX(0%);
 }

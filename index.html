@@ -191,7 +191,7 @@
             </svg>
         </div>
     </div>
-    <!--TechStory PopUp-->
+    <!--TECHSTORY PopUp-->
     <div class="techstory-popup">
         <div class="techstory-popup-title">TECH STORY</div>
         <p class="techstory-popup-text">
@@ -202,6 +202,17 @@
         </p>
         <button class="techstory-popup-button-close"><span style="font-size: 1vw; color: #fff;"><i class="fas fa-times"></i></span></button>
     </div>
+    <!--ABOUT PopUp-->
+    <div class="about-popup">
+            <div class="about-popup-title">A PROPOS</div>
+            <p class="about-popup-text">
+                    Le but de notre équipe est de vous présenter un objet technologique du quotidien et de retracer les évolutions qui ont
+                    permis l’aboutissement de ces objets que nous connaissons à notre époque.
+                    A travers ce projet, nous souhaitons principalement touché les collégiens/lycéens afin de les initier à l’évolution des
+                    technologies grâce aux innovations humaines, qui ont permis d’arriver aux résultats que nous connaissons de nos jours.
+            </p>
+            <button class="about-popup-button-close"><span style="font-size: 1vw; color: #fff;"><i class="fas fa-times"></i></span></button>
+        </div>
     <div id="fullpage">
         <!--Section AVIATION-->
         <div class="section aviation">
@@ -218,7 +229,7 @@
                     <i class="fas fa-circle"></i>
                     <li><button href="#">Partager</button></li>
                     <i class="fas fa-circle"></i>
-                    <li><button href="#">A propos</button></li>
+                    <li><button class="about-button" href="#">A propos</button></li>
                 </ul>
                 <button class="next-slide" onclick="fullpage_api.moveSlideRight();"><span style="font-size: 2vw; color: rgb(52, 152, 219);"><i class="fas fa-angle-right"></i></span></button>
             </div>
@@ -238,7 +249,11 @@
                     <div class="old-techno-right">
                         <div class="old-techno-text">
                             <div class="text-container">
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt necessitatibus distinctio ad iusto adipisci debitis, ratione laboriosam in cum inventore maiores nesciunt provident! Aut optio enim nobis quaerat necessitatibus magni?</p>
+                                <button onclick="fullpage_api.moveTo('1', 0);" class="return-techno"><span><i class="fas fa-angle-left"></i></span>Retour au menu</button>
+                                <p>La technologie du moteur à réaction est une technologie militaire créée par la société Heinkel qui était spécialisée dans la production d'avions de guerre.<br><br>
+                                    Le He 176 fut le premier avion au monde à être propulsé uniquement par un moteur à réaction, un moteur-fusée à ergols liquides qui effectua son premier vol propulsé le 20 juin 1939, piloté par Erich Warsitz.<br><br>
+                                    De nos jours, la grande majorité des avions de ligne possèdent un type de moteur à réaction appelé Turboréacteur, qui propulse l'avion à l'aide d'une combustion de l'air dans le système de propulsion.
+                                </p>
                             </div>
                             <img data-src="images/aeronautique/avionreaction.jpg" alt="Photographie d'avion à réaction">
                         </div>

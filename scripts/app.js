@@ -116,6 +116,10 @@ popup.$techstoryButton = document.querySelectorAll('.techstory-button')
 popup.$techstoryPopup = document.querySelector('.techstory-popup')
 popup.$techstoryButtonClose = popup.$techstoryPopup.querySelector('.techstory-popup-button-close')
 
+popup.$aboutButton = document.querySelectorAll('.about-button')
+popup.$aboutPopup = document.querySelector('.about-popup')
+popup.$aboutButtonClose = popup.$aboutPopup.querySelector('.about-popup-button-close')
+
 for(let i = 0; i < popup.$techstoryButton.length; i++){
 	popup.$techstoryButton[i].addEventListener('click', () => {
 		console.log('bouh')
@@ -128,6 +132,17 @@ popup.$techstoryButtonClose.addEventListener('click', () => {
 	popup.$techstoryPopup.classList.remove('display')
 })
 
+for(let i = 0; i < popup.$aboutButton.length; i++){
+	popup.$aboutButton[i].addEventListener('click', () => {
+		console.log('bouh')
+		/*popup.$aboutPopup.style.display = 'block'*/
+		popup.$aboutPopup.classList.add('display')
+	})
+}
+
+popup.$aboutButtonClose.addEventListener('click', () => {
+	popup.$aboutPopup.classList.remove('display')
+})
 
 /*
 * INTRO
