@@ -151,10 +151,22 @@
     position: absolute;
     top: 4vh;
     right: 2.5vw;
-    color: white;
+    color: none;
     font-family: 'Roboto', sans-serif;
     font-size: 1vw;
     cursor: pointer;
+    height: 4vh;
+    width: 10vw;
+    background-color: #fff;
+    border: 1px solid white;
+    border-radius: 28px;
+    transition: all 0.2s ease-out;
+}
+.slide .old-techno-content .old-techno-right .old-techno-text .text-container .return-techno:hover{
+    background-color: transparent;
+    border: 1px solid white;
+    border-radius: 28px;
+    color: #fff;
 }
 .slide .old-techno-content .old-techno-right .old-techno-text .text-container .return-techno span{
     padding-right: 0.5vw;
