@@ -1,6 +1,7 @@
 /* Element3d class: prototype of the constructor:
     - width -> width of the model canvas
     - height -> height of the model canvas
+    - percent -> percentage of the window take by the 3d canvas
     - type -> string with the type of the texture :
         - "mtl" -> for mtl texture 
         - "png" -> for png texture
@@ -19,13 +20,14 @@
 */
 
 class Element3d{
-    constructor(width, height, type="",obj="",texture, ratio = null, DOM, rotateAngle ,camPos={x:0,y:0,z:-3}, objPos={x:0,y:0,z:0}){
+    constructor(width, height,percent, type="",obj="",texture, ratio = null, DOM, rotateAngle ,camPos={x:0,y:0,z:-3}, objPos={x:0,y:0,z:0}){
         //where you put the canvas 
         this.dom= DOM 
 
-        //window height and width
+        //window height, width and percentage
         this.width = width
         this.height = height
+        this.percent = percent
 
         //path of the png/mlt and obj file
         this.obj = obj
@@ -211,15 +213,16 @@ class Element3d{
         animate()
     }
     
+    //rezise function, call outside the class
     resize(){
-        this.width = window.innerWidth
-        this.height = window.innerHeight
+        this.width = window.innerWidth/100*this.percent
+        this.height = window.innerHeight/100*this.percent
 
 
         this.camera.aspect = this.width / this.height
         this.camera.updateProjectionMatrix()
 
-        this.renderer.setSize( window.innerWidth, window.innerHeight)
+        this.renderer.setSize( this.width, this.height)
      
     }
     

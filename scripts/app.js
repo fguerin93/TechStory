@@ -88,10 +88,15 @@ const dom = document.querySelector('.plane')
 const dom1 = document.querySelector('.watch')
 const dom2 = document.querySelector('.card')
 const dom3 = document.querySelector('.phone')
-const plane = new Element3d(window.innerWidth, window.innerHeight, "png", './models/airplane2/1405 Plane.obj', './models/airplane2/1405 Plane.png', 0.0300, dom,180)
-const watch = new Element3d(window.innerWidth, window.innerHeight, "png", './models/watch/Wirst Watch.obj', './models/watch/Wirst Watch Texture.png', 0.0005, dom1,180)
-const card = new Element3d(window.innerWidth, window.innerHeight, "mtl", './models/cb/model.obj', './models/cb/materials.mtl', 0, dom2, 270, {z:-7})
-const phone = new Element3d(window.innerWidth, window.innerHeight, "mtl", './models/phone/mobile-phone.obj', './models/phone/mobile-phone.mtl', 0, dom3,180, {x:0,y:0,z:-60}, {y:-15})
+
+const windowPercent = 60
+let canvasWidth = window.innerWidth /100*windowPercent
+let canvasHeight = window.innerHeight/100*windowPercent
+
+const plane = new Element3d(canvasWidth, canvasHeight,windowPercent, "png", './models/airplane2/1405 Plane.obj', './models/airplane2/1405 Plane.png', 0.0300, dom,180)
+const watch = new Element3d(canvasWidth, canvasHeight,windowPercent, "png", './models/watch/Wirst Watch.obj', './models/watch/Wirst Watch Texture.png', 0.0005, dom1,180)
+const card = new Element3d(canvasWidth, canvasHeight,windowPercent, "mtl", './models/cb/model.obj', './models/cb/materials.mtl', 0, dom2, 270, {z:-7})
+const phone = new Element3d(canvasWidth, canvasHeight,windowPercent, "mtl", './models/phone/mobile-phone.obj', './models/phone/mobile-phone.mtl', 0, dom3,180, {x:0,y:0,z:-60}, {y:-15})
 
 window.addEventListener('resize', ()=>{
 	plane.resize()
@@ -100,13 +105,6 @@ window.addEventListener('resize', ()=>{
 	phone.resize()
 })
 
-let killTo = (toDie)=>{
-    delete toDie
-    const deadCanvas = dom.querySelector('canvas')
-    deadCanvas.remove(deadCanvas)
-    const object = new Element3d(window.innerWidth, window.innerHeight, "mtl", './models/cb/model.obj', './models/cb/materials.mtl', 0.03, dom)
-    return object
-}
 
 
 /*
