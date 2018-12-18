@@ -106,7 +106,6 @@ window.addEventListener('resize', ()=>{
 })
 
 
-
 /*
 * BUTTON ACTIONS
 */
@@ -129,3 +128,80 @@ popup.$techstoryButtonClose.addEventListener('click', () => {
 	popup.$techstoryPopup.classList.remove('display')
 })
 
+
+/*
+* INTRO
+*/
+
+//DOM ELEMENTS
+
+const $loadingContainer = document.querySelector('.loading-container')
+const $sentenceContainer = $loadingContainer.querySelector('.sentence-container')
+const $sentences = $sentenceContainer.querySelectorAll('.sentence')
+
+const $iconsContainer = $loadingContainer.querySelectorAll('.icon-container')
+const $loadingIcons = $loadingContainer.querySelectorAll('.icon')
+
+const $skipButton = $loadingContainer.querySelector('.skip-button')
+const $loadBar = $loadingContainer.querySelector('.load-bar')
+
+const $titleContainer = $loadingContainer.querySelector('.title-container')
+const $titleLetters = $titleContainer.querySelectorAll('svg')
+
+const $startButton = $titleContainer.querySelector('.start-button')
+
+
+window.setTimeout(function()
+{
+    $sentences[0].classList.add('isVisible')
+},500)
+
+window.setTimeout(function()
+{
+    $sentences[0].classList.remove('isVisible')
+    $sentences[1].classList.add('isVisible')
+},3000)
+
+window.setTimeout(function()
+{
+    $sentences[1].classList.remove('isVisible')
+    $sentences[2].classList.add('isVisible')
+},5500)
+
+window.setTimeout(function()
+{
+    $sentences[2].classList.remove('isVisible')
+    $skipButton.style.display='none'
+},8000)
+
+window.setTimeout(function()
+{
+    $titleContainer.classList.add('isVisible')
+    $titleLetters[5].classList.add('launch-anim')
+    $titleLetters[6].classList.add('launch-anim')
+},9000)
+
+
+for(let i = 0; i<$loadingIcons.length;i++)
+{
+    $loadingIcons[i].addEventListener('mouseleave', (_event) =>
+    {
+        const bounding = $loadingIcons[i].getBoundingClientRect()
+        let translateX = (_event.clientX - bounding.left - bounding.width/2)/3
+        let translateY = (_event.clientY - bounding.top - bounding.height/2)/3
+        $iconsContainer[i].style.transform=`translate(${translateX}px,${translateY}px)`
+    })
+}
+
+const hideLoading = () => {
+	$loadingContainer.style.display = 'none'
+}
+
+
+$skipButton.addEventListener('click',() => {
+	hideLoading()
+})
+
+$startButton.addEventListener('click', () => {
+	hideLoading()
+})
