@@ -1,3 +1,7 @@
+/*
+* FULLPAGE JS SETTINGS
+*/
+
 var myFullpage = new fullpage('#fullpage', {
     //LICENSE
     licenseKey: 'OPEN-SOURCE-GPLV3-LICENSE',
@@ -31,9 +35,9 @@ var myFullpage = new fullpage('#fullpage', {
 	interlockedSlides: false,
 	dragAndMove: false,
 	offsetSections: false,
-	resetSliders: false,
+	resetSliders: true,
 	fadingEffect: false,
-	normalScrollElements: '#element1, .element2',
+	normalScrollElements: '.techstory-popup',
 	scrollOverflow: false,
 	scrollOverflowReset: false,
 	scrollOverflowOptions: null,
@@ -72,8 +76,13 @@ var myFullpage = new fullpage('#fullpage', {
 	afterResize: function(width, height){},
 	afterResponsive: function(isResponsive){},
 	afterSlideLoad: function(section, origin, destination, direction){},
-	onSlideLeave: function(section, origin, destination, direction){}
+	onSlideLeave: function(section, origin, destination, direction){},
 });
+
+
+/*
+* THREE JS SETTINGS AND IMPORTS
+*/
 
 const dom = document.querySelector('.plane')
 const dom1 = document.querySelector('.watch')
@@ -98,3 +107,27 @@ let killTo = (toDie)=>{
     const object = new Element3d(window.innerWidth, window.innerHeight, "mtl", './models/cb/model.obj', './models/cb/materials.mtl', 0.03, dom)
     return object
 }
+
+
+/*
+* BUTTON ACTIONS
+*/
+
+const popup = {}
+
+popup.$techstoryButton = document.querySelectorAll('.techstory-button')
+popup.$techstoryPopup = document.querySelector('.techstory-popup')
+popup.$techstoryButtonClose = popup.$techstoryPopup.querySelector('.techstory-popup-button-close')
+
+for(let i = 0; i < popup.$techstoryButton.length; i++){
+	popup.$techstoryButton[i].addEventListener('click', () => {
+		console.log('bouh')
+		popup.$techstoryPopup.style.display = 'block'
+
+	})
+}
+
+popup.$techstoryButtonClose.addEventListener('click', () => {
+	popup.$techstoryPopup.style.display = 'none'
+})
+

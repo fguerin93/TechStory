@@ -1,11 +1,12 @@
-/*html, body{
-    height: 100%;
-    width: 100%;
-}*/
+/*
+* SECTION STYLES
+*/
+
 .section {
     /*height: 100%;
     width: 100%;
     position: relative;*/
+    z-index: 0;
 }
 .section .techno-title {
     font-family: 'Staatliches', cursive;
@@ -70,6 +71,11 @@
     font-family: 'Roboto', sans-serif;
 }
 
+
+/*
+* SLIDES STYLES
+*/
+
 .slide {
     display: flex;
     flex-direction: column;
@@ -124,6 +130,22 @@
     width: 70vw;
     background-color: white;
     overflow: hidden;
+    position: relative;
+}
+.slide .old-techno-content .old-techno-right .old-techno-text .text-container {
+    background-color: rgba(0, 0, 0, 0.40);
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.slide .old-techno-content .old-techno-right .old-techno-text .text-container p {
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1vw;
+    width: 50vw;
 }
 .slide .old-techno-content .old-techno-right .old-techno-text img {
     height: 100%;
@@ -134,6 +156,11 @@
     height: 25vh;
     width: 100vw;
 }
+
+
+/*
+* SECTION CUSTOM COLORS
+*/
 
 .aviation {
     background: radial-gradient(rgba(52, 152, 219, 0.5), #3498db);
@@ -163,8 +190,14 @@
     color: #2ecc71;
 }
 
+
+/*
+* NAVIGATION
+*/
+
 #fp-nav {
     margin-left: 1vw;
+    z-index: 0;
 }
 #fp-nav ul li {
     margin: 18px 7px;
@@ -178,7 +211,58 @@
 }
 
 
-/**
+/*
+* POP UP
+*/
+.techstory-popup{
+    height: 100vh;
+    width: 100vw;
+    background: radial-gradient(rgb(62, 62, 70), rgb(26, 26, 29, 1.00));
+    position: fixed;
+    z-index: 10;
+    display: none;
+}
+
+.techstory-popup-title{
+    position: absolute;
+    top: 25vh;
+    left: 50vw;
+    transform: translate(-50%, -50%);
+    font-family: 'Staatliches', cursive;
+    font-size: 3vw;
+    color: #fff;
+}
+
+.techstory-popup-text{
+    position: absolute;
+    bottom: 35vh;
+    left: 50vw;
+    transform: translate(-50%, -50%);
+    font-family: 'Roboto', sans-serif;
+    font-size: 1vw;
+    color: white;
+    text-align: center;
+}
+
+
+.techstory-popup-button-close{
+    position: absolute;
+    bottom: 20vh;
+    left: 50vw;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1vw;
+    border-radius: 28px;
+    box-shadow: 4px 4px 15px 0px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    user-select: none;
+    height: 5vh;
+    width: 9.5vw;
+    color: black;
+}
+
+/*
 *
 Loading container
 */
