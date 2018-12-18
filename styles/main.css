@@ -367,5 +367,12 @@ Loading container
 */
 .techstory-popup.display{
     opacity: 1;
-    transform: translateX(0%)
+    transform: translateX(0%);
+}
+
+.element3d{
+    position: absolute;
+    top: 50vh;
+    left: 50vw;
+    transform: translate(-50%, -50%);
 }
