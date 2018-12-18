@@ -1,3 +1,12 @@
+<?php
+
+
+
+setcookie('user', 'value', time()+100000, '/');
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -768,6 +777,32 @@
                 </div>
             </div>
         </div>
+        <!-- formulaire section -->
+        <div class="section telephony">
+            <div class="slide">
+                <div class="techno-title">La Téléphonie</div>
+                <div class="form">
+                    <form action="form.php" method="get">
+                        <input type="radio" name="object" value="Couteau"> Couteau<br/>
+                        <input type="radio" name="object" value="Voiture"> Voiture <br/>
+                        <input type="radio" name="object" value="Television"> Télévision <br/> 
+                        <input type="submit" value="Envoyé">
+                    </form>
+                </div>
+                <div class="techno-discover">
+                    <button class="discover-button">Découvrir</button>
+                </div>
+                <ul class="techno-footer">
+                    <li><button class="techstory-button" href="#">Tech Story</button></li>
+                    <i class="fas fa-circle"></i>
+                    <li><button href="#">Partager</button></li>
+                    <i class="fas fa-circle"></i>
+                    <li><button class="about-button" href="#">A propos</button></li>
+                </ul>
+                
+            </div>
+        </div>
+
         
     </div>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.0.3/fullpage.js"></script>
@@ -779,6 +814,7 @@
     <script src="scripts/libs/OrbitControls.js"></script>
     <script src="scripts/customLibs/Element3d.js"></script>
     <script src="scripts/app.js"></script>
+    <script src="scripts/form.js"></script>
 </body>
 
 </html>

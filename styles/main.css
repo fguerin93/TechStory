@@ -638,3 +638,17 @@
     opacity: 1;
     transform: translateY(0%);
 }
+
+/* 
+    FORM SECTION    
+*/
+
+.form{
+    position: absolute;
+    top: 50vh;
+    left: 50vw;
+    transform: translate(-50%, -50%);
+}
+.form .form-submit{
+    cursor: pointer;
+}
