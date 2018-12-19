@@ -500,13 +500,13 @@
     -webkit-user-drag: none;
 }
 
-.loading-container svg.fingerprint {left: 15vw;top: 20vh;fill:red}
-.loading-container svg.radioactive {left: 35vw;top: 15vh;fill:green}
-.loading-container svg.wheel {left: 55vw;top: 16vh;fill:turquoise}
-.loading-container svg.wifi {left: 80vw;top: 22vh;fill:purple}
-.loading-container svg.hammer {left: 20vw;top: 75vh;fill:yellow}
-.loading-container svg.lightbulb {left: 50vw;top: 65vh;fill:orange}
-.loading-container svg.laptop {left: 75vw;top: 70vh;fill:blue}
+.loading-container svg.fingerprint {left: 15vw;top: 20vh;fill:#e74c3c}
+.loading-container svg.radioactive {left: 35vw;top: 15vh;fill:#2ecc71}
+.loading-container svg.wheel {left: 55vw;top: 16vh;fill:#1abc9c}
+.loading-container svg.wifi {left: 80vw;top: 22vh;fill:#9b59b6}
+.loading-container svg.hammer {left: 20vw;top: 75vh;fill:#f1c40f}
+.loading-container svg.lightbulb {left: 50vw;top: 62vh;fill:#e67e22}
+.loading-container svg.laptop {left: 75vw;top: 70vh;fill:#3498db}
 
 /*
 * KEYFRAMES

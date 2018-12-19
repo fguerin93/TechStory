@@ -220,3 +220,15 @@ $skipButton.addEventListener('click',() => {
 $startButton.addEventListener('click', () => {
 	hideLoading()
 })
+
+
+
+//SCROLL HORIZONTAL ON SLIDES
+const slideScroll = document.querySelectorAll('.scroll-horiz')
+
+for (i = 0; i < slideScroll.length; i++){
+	slideScroll[i].addEventListener('mousewheel', () => {
+		fullpage_api.moveSlideRight();
+	})
+}
+
