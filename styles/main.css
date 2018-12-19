@@ -69,6 +69,12 @@
     opacity: 0.8;
     cursor: pointer;
     z-index: 21;
+    transition: opacity 0.4s ease;
+}
+
+.loading-container .skip-button:hover
+{
+    opacity: 0.3;
 }
 
 .loading-container .load-bar
@@ -232,6 +238,13 @@
     color: rgb(26, 26, 29, 1.00);
     user-select: none;
     -webkit-user-drag: none;
+    transition: all 0.4s ease;
+}
+
+.title-container .start-button:hover
+{
+    color: #fff;
+    background-color: rgba(255,255,255,0.4);
 }
 
 
