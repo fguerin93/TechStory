@@ -175,26 +175,26 @@ window.setTimeout(function()
 {
     $sentences[0].classList.remove('isVisible')
     $sentences[1].classList.add('isVisible')
-},3000)
+},5000)
 
 window.setTimeout(function()
 {
     $sentences[1].classList.remove('isVisible')
     $sentences[2].classList.add('isVisible')
-},5500)
+},9500)
 
 window.setTimeout(function()
 {
     $sentences[2].classList.remove('isVisible')
     $skipButton.style.display='none'
-},8000)
+},14000)
 
 window.setTimeout(function()
 {
     $titleContainer.classList.add('isVisible')
     $titleLetters[5].classList.add('launch-anim')
     $titleLetters[6].classList.add('launch-anim')
-},9000)
+},15000)
 
 
 for(let i = 0; i<$loadingIcons.length;i++)
