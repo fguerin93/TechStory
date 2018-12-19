@@ -1,12 +1,3 @@
-<?php
-
-
-
-setcookie('user', 'value', time()+100000, '/');
-
-
-?>
-
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -778,20 +769,29 @@ setcookie('user', 'value', time()+100000, '/');
             </div>
         </div>
         <!-- formulaire section -->
-        <div class="section telephony">
+        <div class="section formulaire">
             <div class="slide">
-                <div class="techno-title">La Téléphonie</div>
+                <div class="form-title">Prochain objet</div>
                 <div class="form">
-                    <form action="form.php" method="get">
-                        <input type="radio" name="object" value="Couteau"> Couteau<br/>
-                        <input type="radio" name="object" value="Voiture"> Voiture <br/>
-                        <input type="radio" name="object" value="Television"> Télévision <br/> 
-                        <input type="submit" value="Envoyé">
+                    <form action="module/form.php" method="get">
+                        <div class="input-radio">
+                            <input type="radio" name="object" value="Couteau"> 
+                            <span>Couteau</span>
+                        </div>
+                        <div class="input-radio">
+                            <input type="radio" name="object" value="Voiture"> 
+                            <span>Voiture</span>
+                        </div>
+                        <div class="input-radio">
+                            <input type="radio" name="object" value="Television"> 
+                            <span>Télévision</span>
+                        </div>
+
+                        <input type="submit" value="Soumettre"> <img class="message " src="images/check.png" alt="envoyé">
                     </form>
+                    
                 </div>
-                <div class="techno-discover">
-                    <button class="discover-button">Découvrir</button>
-                </div>
+
                 <ul class="techno-footer">
                     <li><button class="techstory-button" href="#">Tech Story</button></li>
                     <i class="fas fa-circle"></i>

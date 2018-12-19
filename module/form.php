@@ -1,6 +1,6 @@
 <?php   
 $form_value = $_GET['object'];
-echo "plop ".$form_value;
+$form_value= htmlspecialchars($form_value);
 
 
 $json= file_get_contents("vote.json");
@@ -13,7 +13,7 @@ $len = sizeof($json_data["content"]);
 
 //log vote
 $string = "vote ".$form_value;
-error_log($string, 3, "plop.log");
+error_log($string."\n", 3, "vote.log");
 
 //add the vote
 while ($i < $len ){
@@ -28,4 +28,6 @@ $json_data = json_encode($json_data, TRUE);
 //put in file 
 file_put_contents("vote.json", $json_data);
 
+
+header('Location: ../index.html'); 
 ?>

@@ -1,5 +1,6 @@
 const form= document.querySelector('form')
 
+const message = document.querySelector('.message')
 const submitButton = form.querySelector('[type=submit]')
 const values = form.querySelectorAll('[name=object]')
 const targetForm = form.action
@@ -15,34 +16,41 @@ const day = date.getDate()
 const dayWeek = date.getDay()
 
 let clickToPush = false
+
+let selectedValue
+
 submitButton.addEventListener('click', (event)=>{
     event.preventDefault()
-    if(!clickToPush){
-        checkVote()
-    }else{
-        alreadyVote()
+
+    for(let i=0 ; i<values.length; i++){
+        if(values[i].checked){
+            selectedValue = values[i]
+    
+            break
+        }
+        selectedValue = undefined
+    }
+    if(selectedValue != undefined){
+        if(!clickToPush){
+            checkVote()
+        }else{
+            alreadyVote()
+        }
     }
 
 })
 
 //send request to the .php file 
 const sendRequest = ()=>{
-    let selectedValue
-    for(let i=0 ; i<values.length; i++){
-        if(values[i].checked){
-            selectedValue = values[i]
-            break
-        }
-        selectedValue = undefined
-    }
-    const url = `${targetForm}?${selectedValue.name}=${selectedValue.value}`
-
 
     if(selectedValue != undefined){
+        const url = `${targetForm}?${selectedValue.name}=${selectedValue.value}`
         let request = new XMLHttpRequest()
 
         request.open('GET', url, true)
         request.send()
+        message.setAttribute('alt', 'Envoyé')
+        message.classList.add('checked')
     }
     
     
@@ -81,5 +89,6 @@ const checkVote = ()=>{
 
 //if user already vote
 const alreadyVote = ()=>{
-    console.warn( 'alreadyVote')
+    message.setAttribute('alt', "Vous l'avez déjà envoyé")
+    message.classList.add('checked')
 }
