@@ -268,9 +268,6 @@
                         </div>
                     </div>
                 </div>
-                <div class="timeline-content">
-                        <button class="next-slide" onclick="fullpage_api.moveSlideRight();"><span style="font-size: 2vw; color: rgb(52, 152, 219);"><i class="fas fa-angle-right"></i></span></button>
-                </div>
             </div>
             <!--Section AVIATION - Slide 2-->
             <div class="slide scroll-horiz">
@@ -296,9 +293,6 @@
                             <img data-src="images/aeronautique/fuselagemetal.jpg" alt="Photographie du fuselage en métal">
                         </div>
                     </div>
-                </div>
-                <div class="timeline-content">
-                    
                 </div>
             </div>
             <!--Section AVIATION - Slide 3-->
@@ -327,9 +321,6 @@
                         </div>
                     </div>
                 </div>
-                <div class="timeline-content">
-                    
-                </div>
             </div>
             <!--Section AVIATION - Slide 4-->
             <div class="slide scroll-horiz">
@@ -356,9 +347,6 @@
                             <img data-src="images/aeronautique/machinevolante.png" alt="Photographie de la machine volante">
                         </div>
                     </div>
-                </div>
-                <div class="timeline-content">
-                    
                 </div>
             </div>
         </div>
@@ -416,9 +404,6 @@
                         </div>
                     </div>
                 </div>
-                <div class="timeline-content">
-                    
-                </div>
             </div>
             <!--Section WATCH - Slide 2-->
             <div class="slide scroll-horiz">
@@ -444,9 +429,6 @@
                             <img data-src="images/horlogerie/horlogemecanique.jpg" alt="Photographie d'une horloge mécanique">
                         </div>
                     </div>
-                </div>
-                <div class="timeline-content">
-                    
                 </div>
             </div>
             <!--Section WATCH - Slide 3-->
@@ -474,9 +456,6 @@
                         </div>
                     </div>
                 </div>
-                <div class="timeline-content">
-                    
-                </div>
             </div>
             <!--Section WATCH - Slide 4-->
             <div class="slide scroll-horiz">
@@ -503,9 +482,6 @@
                             <img data-src="images/horlogerie/cadransolaire.jpg" alt="Photographie d'un cadran solaire">
                         </div>
                     </div>
-                </div>
-                <div class="timeline-content">
-                    
                 </div>
             </div>
         </div>
@@ -561,9 +537,6 @@
                         </div>
                     </div>
                 </div>
-                <div class="timeline-content">
-                    
-                </div>
             </div>
             <!--Section PAYMENT METHOD - Slide 2-->
             <div class="slide scroll-horiz">
@@ -590,9 +563,6 @@
                             <img data-src="images/monnaie/frappemecanique.jpeg" alt="Photographie d'un atelier">
                         </div>
                     </div>
-                </div>
-                <div class="timeline-content">
-                    
                 </div>
             </div>
             <!--Section PAYMENT METHOD - Slide 3-->
@@ -621,9 +591,6 @@
                         </div>
                     </div>
                 </div>
-                <div class="timeline-content">
-                    
-                </div>
             </div>
             <!--Section PAYMENT METHOD - Slide 4-->
             <div class="slide scroll-horiz">
@@ -649,9 +616,6 @@
                             <img data-src="images/monnaie/monnaiefrappee.jpg" alt="Photographie de monnaie ">
                         </div>
                     </div>
-                </div>
-                <div class="timeline-content">
-                    
                 </div>
             </div>
         </div>
@@ -707,9 +671,6 @@
                         </div>
                     </div>
                 </div>
-                <div class="timeline-content">
-                    
-                </div>
             </div>
             <!--Section TELEPHONY - Slide 2-->
             <div class="slide scroll-horiz">
@@ -736,9 +697,6 @@
                             <img data-src="images/telephonie/transatlantique.png" alt="Photographie de travailleurs sur la ligne">
                         </div>
                     </div>
-                </div>
-                <div class="timeline-content">
-                    
                 </div>
             </div>
             <!--Section TELEPHONY - Slide 3-->
@@ -767,9 +725,6 @@
                         </div>
                     </div>
                 </div>
-                <div class="timeline-content">
-                    
-                </div>
             </div>
             <!--Section TELEPHONY - Slide 4-->
             <div class="slide scroll-horiz">
@@ -795,9 +750,37 @@
                         </div>
                     </div>
                 </div>
-                <div class="timeline-content">
-                    
+            </div>        
+        </div>
+        <!-- formulaire section -->
+        <div class="section formulaire">
+            <div class="slide">
+                <div class="form-title">Prochain objet</div>
+                <div class="form">
+                    <form action="module/form.php" method="get">
+                        <div class="input-radio">
+                            <input type="radio" name="object" value="Couteau"> 
+                            <span>Couteau</span>
+                        </div>
+                        <div class="input-radio">
+                            <input type="radio" name="object" value="Voiture"> 
+                            <span>Voiture</span>
+                        </div>
+                        <div class="input-radio">
+                            <input type="radio" name="object" value="Television"> 
+                            <span>Télévision</span>
+                        </div>
+
+                        <input type="submit" value="Soumettre"> <img class="message " src="images/check.png" alt="envoyé">
+                    </form>     
                 </div>
+                <ul class="techno-footer">
+                    <li><button class="techstory-button" href="#">Tech Story</button></li>
+                    <i class="fas fa-circle"></i>
+                    <li><button href="#">Partager</button></li>
+                    <i class="fas fa-circle"></i>
+                    <li><button class="about-button" href="#">A propos</button></li>
+                </ul>
             </div>
         </div>
     </div>
@@ -818,6 +801,7 @@
     <script src="scripts/libs/mtlloader.js"></script>
     <script src="scripts/libs/OrbitControls.js"></script>
     <script src="scripts/customLibs/Element3d.js"></script>
+    <script src="scripts/form.js"></script>
     <script src="scripts/app.js"></script>
 </body>
 
