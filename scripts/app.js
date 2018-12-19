@@ -350,7 +350,8 @@ const loop = () =>
 			$timelineContainer.classList.add('isVisible')
 		}
 		if ((document.body.classList.contains(`fp-viewing-1-0`))||(document.body.classList.contains(`fp-viewing-2-0`))||(document.body.classList.contains(`fp-viewing-3-0`))
-		||(document.body.classList.contains(`fp-viewing-4-0`)))
+		||(document.body.classList.contains(`fp-viewing-4-0`))
+		||(document.body.classList.contains(`fp-viewing-1-5`))||(document.body.classList.contains(`fp-viewing-2-5`))||(document.body.classList.contains(`fp-viewing-3-5`))||(document.body.classList.contains(`fp-viewing-4-5`)))
 		{
 			$timelineContainer.classList.remove('isVisible')
 		}

@@ -195,25 +195,25 @@
     <!--TECHSTORY PopUp-->
     <div class="techstory-popup">
         <div class="techstory-popup-title">TECH STORY</div>
-        <p class="techstory-popup-text">
-            <strong>Comment l’évolution technologique découle-t-elle d’une simple succession de découvertes ?</strong><br><br>
-            Notre concept est de réaliser un support digital web, ludique et immersif, présentant de manière concise les technologies
-            que nous estimons pertinentes pour enrichir la culture technologique de chacun ou bien pour les plus technophiles d’entre
-            vous, revoir certaines notions.
-        </p>
+            <p class="techstory-popup-text">
+                <strong>Comment l’évolution technologique découle-t-elle d’une simple succession de découvertes ?</strong><br><br>
+                Notre concept est de réaliser un support digital web, ludique et immersif, présentant de manière concise les technologies
+                que nous estimons pertinentes pour enrichir la culture technologique de chacun ou bien pour les plus technophiles d’entre
+                vous, revoir certaines notions.
+            </p>
         <button class="techstory-popup-button-close"><span style="font-size: 1vw; color: #fff;"><i class="fas fa-times"></i></span></button>
     </div>
     <!--ABOUT PopUp-->
     <div class="about-popup">
-            <div class="about-popup-title">A PROPOS</div>
+        <div class="about-popup-title">A PROPOS</div>
             <p class="about-popup-text">
                     Le but de notre équipe est de vous présenter un objet technologique du quotidien et de retracer les évolutions qui ont
                     permis l’aboutissement de ces objets que nous connaissons à notre époque.
                     A travers ce projet, nous souhaitons principalement touché les collégiens/lycéens afin de les initier à l’évolution des
                     technologies grâce aux innovations humaines, qui ont permis d’arriver aux résultats que nous connaissons de nos jours.
             </p>
-            <button class="about-popup-button-close"><span style="font-size: 1vw; color: #fff;"><i class="fas fa-times"></i></span></button>
-        </div>
+        <button class="about-popup-button-close"><span style="font-size: 1vw; color: #fff;"><i class="fas fa-times"></i></span></button>
+    </div>
     <div id="fullpage">
         <!--Section AVIATION-->
         <div class="section aviation">
@@ -348,6 +348,10 @@
                         </div>
                     </div>
                 </div>
+            </div>
+            <div class="slide end-slide">
+                <button onclick="fullpage_api.moveTo('1', 0);" class="return-menu" style="color: #3498db">Retour au menu</button>
+                <button onclick="fullpage_api.moveTo('2', 0);" class="go-techno" style="color: #3498db">Découvrir l'horlogerie</button>
             </div>
         </div>
         <!--Section WATCH-->
@@ -484,6 +488,10 @@
                     </div>
                 </div>
             </div>
+            <div class="slide end-slide">
+                <button onclick="fullpage_api.moveTo('2', 0);" class="return-menu" style="color: #1abc9c">Retour au menu</button>
+                <button onclick="fullpage_api.moveTo('3', 0);" class="go-techno" style="color: #1abc9c">Découvrir les moyens de paiement</button>
+            </div>
         </div>
         <!--Section PAYMENT METHOD-->
         <div class="section paymentmethod">
@@ -618,6 +626,10 @@
                     </div>
                 </div>
             </div>
+            <div class="slide end-slide">
+                <button onclick="fullpage_api.moveTo('3', 0);" class="return-menu" style="color: #e74c3c">Retour au menu</button>
+                <button onclick="fullpage_api.moveTo('4', 0);" class="go-techno" style="color: #e74c3c">Découvrir la téléphonie</button>
+            </div>
         </div>
         <!--Section TELEPHONY-->
         <div class="section telephony">
@@ -750,7 +762,11 @@
                         </div>
                     </div>
                 </div>
-            </div>        
+            </div>
+            <div class="slide end-slide">
+                <button onclick="fullpage_api.moveTo('4', 0);" class="return-menu" style="color: #2ecc71">Retour au menu</button>
+                <button onclick="fullpage_api.moveTo('5', 0);" class="go-techno" style="color: #2ecc71">Voter pour la prochaine techno</button>
+            </div>   
         </div>
         <!-- formulaire section -->
         <div class="section formulaire">

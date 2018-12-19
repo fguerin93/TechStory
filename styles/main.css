@@ -473,6 +473,42 @@
     font-family: 'Roboto', sans-serif;
 }
 
+.end-slide{
+    position: relative;
+}
+.end-slide .return-menu{
+    position: absolute;
+    top: 40vh;
+    left: 50vw;
+    transform: translate(-50%, -50%);
+    font-family: 'Roboto', sans-serif;
+    font-size: 1vw;
+    cursor: pointer;
+    height: 6vh;
+    width: 13vw;
+    background-color: #fff;
+    border: 1px solid white;
+    border-radius: 28px;
+    transition: all 0.2s ease-out;
+    box-shadow: 4px 4px 15px 0px rgba(0, 0, 0, 0.2);
+}
+.end-slide .go-techno{
+    position: absolute;
+    bottom: 40vh;
+    left: 50vw;
+    transform: translate(-50%, -50%);
+    font-family: 'Roboto', sans-serif;
+    font-size: 1vw;
+    cursor: pointer;
+    height: 6vh;
+    width: 13vw;
+    background-color: #fff;
+    border: 1px solid white;
+    border-radius: 28px;
+    transition: all 0.2s ease-out;
+    box-shadow: 4px 4px 15px 0px rgba(0, 0, 0, 0.2);
+}
+
 
 /*
 * SECTION CUSTOM COLORS-------------------------------------------------------------------------------
@@ -524,7 +560,9 @@
 #fp-nav ul li a .fp-sr-only {
     font-family: 'Roboto', sans-serif;
 }*/
-
+.scroll-horiz #fp-nav{
+    display: none;
+}
 
 /*
 * POP UP TECHSTORY-------------------------------------------------------------------------------
