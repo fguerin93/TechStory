@@ -246,6 +246,11 @@ for (let i = 0; i < $lsvPopup.length; i++){
 		$lsvPopup[i].classList.add('display')
 	})
 }
+
+
+/*
+* TIMELINE
+*/
 // Dom elements for TIMELINE
 
 const $timelineContainer = document.querySelector('.timeline-container')
