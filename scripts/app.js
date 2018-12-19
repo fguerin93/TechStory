@@ -244,10 +244,17 @@ for (let i = 0; i < $slideScroll.length; i++){
 */
 const $lsvPopup = document.querySelectorAll('.techno-lsv-popup')
 const $lsvButton = document.querySelectorAll('.discover-button')
+const $lsvCloseButton = document.querySelectorAll('.techno-lsv-popup-button-close')
 
 for (let i = 0; i < $lsvPopup.length; i++){
 	$lsvButton[i].addEventListener('click', () => {
 		$lsvPopup[i].classList.add('display')
+		console.log('oui')
+	})
+}
+for (let i = 0; i < $lsvCloseButton.length; i++){
+	$lsvCloseButton[i].addEventListener('click', () => {
+		$lsvPopup[i].classList.remove('display')
 	})
 }
 
