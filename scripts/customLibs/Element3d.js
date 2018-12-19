@@ -82,7 +82,7 @@ class Element3d{
         //orbit control setup 
         let controls = new THREE.OrbitControls(this.camera, this.renderer.domElement)
         controls.enableDamping = true
-        controls.dampingFactor = 0.25
+        controls.dampingFactor = 0.6
         controls.enableZoom = false
         controls.enablePan = false
         controls.enableKeys = false

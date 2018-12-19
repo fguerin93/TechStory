@@ -223,12 +223,26 @@ $startButton.addEventListener('click', () => {
 
 
 
-//SCROLL HORIZONTAL ON SLIDES
-const slideScroll = document.querySelectorAll('.scroll-horiz')
+/*
+* SCROLL HORIZONTAL ON SLIDES
+*/
+const $slideScroll = document.querySelectorAll('.scroll-horiz')
 
-for (i = 0; i < slideScroll.length; i++){
-	slideScroll[i].addEventListener('mousewheel', () => {
+for (let i = 0; i < $slideScroll.length; i++){
+	$slideScroll[i].addEventListener('mousewheel', () => {
 		fullpage_api.moveSlideRight();
 	})
 }
 
+
+/*
+* POPUP LSV
+*/
+const $lsvPopup = document.querySelectorAll('.techno-lsv-popup')
+const $lsvButton = document.querySelectorAll('.discover-button')
+
+for (let i = 0; i < $lsvPopup.length; i++){
+	$lsvButton[i].addEventListener('click', () => {
+		$lsvPopup[i].classList.add('display')
+	})
+}

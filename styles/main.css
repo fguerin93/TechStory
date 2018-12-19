@@ -274,6 +274,25 @@
     height: 5vh;
     width: 9.5vw;
 }
+.techno-lsv-popup{
+    position: absolute;
+    top: 50vh;
+    left: 50vw;
+    transform: translate(-50%, -50%);
+    height: 68vh;
+    width: 60vw;
+    background-color: #fff;
+    border-radius: 28px;
+    opacity: 0;
+    display: none;
+}
+.techno-lsv-popup-title{
+    position: absolute;
+    top: 50vh;
+    width: 50vw;
+    transform: translate(-50%, -50%);
+    font-family: 'Staatliches', cursive;
+}
 .section .techno-footer {
     position: absolute;
     bottom: 2vh;
@@ -311,6 +330,10 @@
     cursor: pointer;
     box-shadow: 4px 4px 15px 0px rgba(0, 0, 0, 0.2);
     font-family: 'Roboto', sans-serif;
+    transition: width 0.3s ease-out;
+}
+.section .next-slide:hover{
+    width: 5.5vw;
 }
 
 
@@ -620,10 +643,16 @@
     transform: translateY(0%);
 }
 
+.techno-lsv-popup.display{
+    opacity: 1;
+    transform: translateY(0%);
+}
+
 .about-popup.display{
     opacity: 1;
     transform: translateY(0%);
 }
+
 
 .element3d{
     position: absolute;
