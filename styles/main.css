@@ -893,3 +893,21 @@ timeline container
     width: 1.5vw;
     height: 1.5vw;
 }
+
+/**
+*
+hover on buttons
+*/
+
+button.discover-button,
+.end-slide button
+{
+    opacity:1;
+    transition: opacity 0.3s ease;
+}
+
+button.discover-button:hover,
+.end-slide button:hover
+{
+    opacity:0.8;
+}
