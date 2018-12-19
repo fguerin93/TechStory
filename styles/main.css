@@ -754,6 +754,7 @@ timeline container
 {
     position: absolute;
     width: 90vw;
+    bottom: -10vh;
     opacity: 0;
     transition: opacity 0.1s ease;
 }
