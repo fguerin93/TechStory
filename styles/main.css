@@ -1,7 +1,243 @@
 /*
-* SECTION STYLES
+* LOADING CONTAINER-------------------------------------------------------------------------------
+*/
+.loading-container
+{
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    /*background: radial-gradient(rgb(62, 62, 70), rgb(26, 26, 29));*/
+    background-image  : -webkit-radial-gradient(10px 50%, circle, rgb(62, 62, 70) 0%, rgb(26, 26, 29) 100%);
+    background-image  : -webkit-radial-gradient(top left, ellipse farthest-corner, rgb(62, 62, 70) 0%, rgb(26, 26, 29) 100%);
+    background : -webkit-radial-gradient(center, ellipse, rgb(62, 62, 70) 0%, rgb(26, 26, 29) 100%);
+    z-index: 20;
+    opacity: 0;
+    transform: translateY(-100%);
+    transition: all 0.5s ease-out;
+}
+
+.loading-container .sentence-container
+{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.loading-container .sentence-container .sentence
+{
+    font-size: 1.2vw;
+    font-family: helvetica;
+    color: #ffffff;
+    opacity: 0;
+    transition: opacity 1s ease;
+}
+
+.loading-container .sentence-container .sentence.isVisible
+{
+    opacity: 1;
+}
+
+.loading-container .sentence-container .sentence.first
+{
+    transform: translateY(100%);
+}
+
+.loading-container .sentence-container .sentence.third
+{
+    transform: translateY(-100%);
+}
+
+.loading-container .skip-button
+{
+    position: absolute;
+    bottom: 3vh;
+    left: 50vw;
+    transform: translate(-50%, -50%);
+}
+
+.loading-container .skip-button
+{
+    font-size: 0.8vw;
+    font-family: 'Roboto', sans-serif;
+    color: #ffffff;
+    opacity: 0.8;
+    cursor: pointer;
+    z-index: 21;
+}
+
+.loading-container .load-bar
+{
+    position: absolute;
+    width: 100%;
+    height: 0.25vh;
+    left: 0;
+    bottom: 0px;
+    background: #ffffff;
+    transform-origin: 0;
+    transform: scaleX(0);
+    animation-name: scaleLoadbar;
+    animation-duration: 9s;
+    animation-timing-function: linear;
+}
+
+
+/*
+* ANIMATE LOAD BAR-------------------------------------------------------------------------------
+*/
+@keyframes scaleLoadbar
+{
+    0% {transform: scalex(0)}
+    100% {transform: scaleX(1)}
+}
+
+/*
+* Icon container
 */
 
+.loading-container .icon-container
+{
+    position: absolute;
+    transition: transform 0.5s ease;
+}
+
+.loading-container .icon-container svg
+{
+    position: absolute;
+    width: 5vw;
+    height: 5vw;
+    animation-name: rotateIcons;
+    animation-duration: 2s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate-reverse;
+    user-select: none;
+    -webkit-user-drag: none;
+}
+
+.loading-container svg.fingerprint {left: 15vw;top: 20vh;fill:#e74c3c}
+.loading-container svg.radioactive {left: 35vw;top: 15vh;fill:#2ecc71}
+.loading-container svg.wheel {left: 55vw;top: 16vh;fill:#1abc9c}
+.loading-container svg.wifi {left: 80vw;top: 22vh;fill:#9b59b6}
+.loading-container svg.hammer {left: 20vw;top: 75vh;fill:#f1c40f}
+.loading-container svg.lightbulb {left: 50vw;top: 62vh;fill:#e67e22}
+.loading-container svg.laptop {left: 75vw;top: 70vh;fill:#3498db}
+
+
+/*
+* KEYFRAMES-------------------------------------------------------------------------------
+*/
+@keyframes rotateIcons
+{
+    0% {transform: rotateZ(-6deg) translateY(-10px)}
+    100% {transform: rotateZ(6deg translateY(10px))}
+}
+
+
+/*
+* TITLE PART
+*/
+.title-container
+{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 2s linear;
+}
+
+.title-container.isVisible
+{
+    opacity: 1;
+}
+
+.title-container svg
+{
+    position: absolute;
+    width: 8vw;
+    height: 8vw;
+    fill: white;
+    top: 35vh;
+    z-index: 1;
+}
+
+.title-container svg.t1-letter{left: 10vw;}
+.title-container svg.e-letter{left: 18vw;}
+.title-container svg.c-letter{left: 26vw;}
+.title-container svg.h-letter{left: 34vw;}
+.title-container svg.s-letter{left: 48vw;}
+.title-container svg.t2-letter{left: 56vw;transform-origin: 50% 100%;}
+.title-container svg.o-letter{left: 64vw;transform-origin: 50% 50%;}
+.title-container svg.r-letter{left: 73vw;}
+.title-container svg.y-letter{left: 81vw;}
+
+.title-container svg.t2-letter.launch-anim
+{
+    animation-name: letterT2;
+    animation-duration: 1s;
+    animation-direction: alternate;
+}
+
+.title-container svg.o-letter.launch-anim
+{
+    animation-name: letterO;
+    animation-duration: 4s;
+    animation-delay: 0.4s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+
+/*
+* KEYFRAMES LETTER-------------------------------------------------------------------------------
+*/
+@keyframes letterT2
+{
+    0% {transform: rotateZ(0deg)}
+    25% {transform: rotateZ(-5deg)}
+    50% {transform: rotateZ(18deg)}
+    100% {transform: rotateZ(0deg)}
+}
+
+@keyframes letterO
+{
+    0% {transform: rotateZ(0deg)}
+    100% {transform: rotateZ(-360deg)}
+}
+
+
+/*
+* START BUTTON-------------------------------------------------------------------------------
+*/
+.title-container .start-button
+{
+    position: absolute;
+    bottom: 15vh;
+    left: 50vw;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1vw;
+    border-radius: 28px;
+    box-shadow: 4px 4px 15px 0px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    user-select: none;
+    height: 6vh;
+    width: 14vw;
+    color: rgb(26, 26, 29, 1.00);
+    user-select: none;
+    -webkit-user-drag: none;
+}
+
+
+/*
+* SECTION STYLES-------------------------------------------------------------------------------
+*/
 .section {
     /*height: 100%;
     width: 100%;
@@ -79,9 +315,8 @@
 
 
 /*
-* SLIDES STYLES
+* SLIDES STYLES-------------------------------------------------------------------------------
 */
-
 .slide {
     display: flex;
     flex-direction: column;
@@ -204,9 +439,8 @@
 
 
 /*
-* SECTION CUSTOM COLORS
+* SECTION CUSTOM COLORS-------------------------------------------------------------------------------
 */
-
 .aviation {
     background: radial-gradient(rgba(52, 152, 219, 0.5), #3498db);
 }
@@ -237,7 +471,7 @@
 
 
 /*
-* NAVIGATION
+* NAVIGATION-------------------------------------------------------------------------------
 */
 
 /*#fp-nav {
@@ -257,7 +491,7 @@
 
 
 /*
-* POP UP TECHSTORY
+* POP UP TECHSTORY-------------------------------------------------------------------------------
 */
 .techstory-popup{
     height: 100vh;
@@ -318,7 +552,7 @@
 
 
 /*
-* POP UP ABOUT
+* POP UP ABOUT-------------------------------------------------------------------------------
 */
 .about-popup{
     height: 100vh;
@@ -377,246 +611,9 @@
     border-radius: 50%;
 }
 
-/*
-* LOADING CONTAINER
-*/
-
-.loading-container
-{
-    position: absolute;
-    width: 100vw;
-    height: 100vh;
-    /*background: radial-gradient(rgb(62, 62, 70), rgb(26, 26, 29));*/
-    background-image  : -webkit-radial-gradient(10px 50%, circle, rgb(62, 62, 70) 0%, rgb(26, 26, 29) 100%);
-    background-image  : -webkit-radial-gradient(top left, ellipse farthest-corner, rgb(62, 62, 70) 0%, rgb(26, 26, 29) 100%);
-    background : -webkit-radial-gradient(center, ellipse, rgb(62, 62, 70) 0%, rgb(26, 26, 29) 100%);
-    z-index: 20;
-    opacity: 0;
-    transform: translateY(-100%);
-    transition: all 0.5s ease-out;
-}
-
-.loading-container .sentence-container
-{
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-}
-
-.loading-container .sentence-container .sentence
-{
-    font-size: 1.2vw;
-    font-family: helvetica;
-    color: #ffffff;
-    opacity: 0;
-    transition: opacity 1s ease;
-}
-
-.loading-container .sentence-container .sentence.isVisible
-{
-    opacity: 1;
-}
-
-.loading-container .sentence-container .sentence.first
-{
-    transform: translateY(100%);
-}
-
-.loading-container .sentence-container .sentence.third
-{
-    transform: translateY(-100%);
-}
-
-.loading-container .skip-button
-{
-    position: absolute;
-    bottom: 3vh;
-    left: 50vw;
-    transform: translate(-50%, -50%);
-}
-
-.loading-container .skip-button
-{
-    font-size: 0.8vw;
-    font-family: 'Roboto', sans-serif;
-    color: #ffffff;
-    opacity: 0.8;
-    cursor: pointer;
-    z-index: 21;
-}
-
-.loading-container .load-bar
-{
-    position: absolute;
-    width: 100%;
-    height: 0.25vh;
-    left: 0;
-    bottom: 0px;
-    background: #ffffff;
-    transform-origin: 0;
-    transform: scaleX(0);
-    animation-name: scaleLoadbar;
-    animation-duration: 9s;
-    animation-timing-function: linear;
-}
 
 /*
-* ANIMATE LOAD BAR
-*/
-
-@keyframes scaleLoadbar
-{
-    0% {transform: scalex(0)}
-    100% {transform: scaleX(1)}
-}
-
-/*
-* Icon container
-*/
-
-.loading-container .icon-container
-{
-    position: absolute;
-    transition: transform 0.5s ease;
-}
-
-.loading-container .icon-container svg
-{
-    position: absolute;
-    width: 5vw;
-    height: 5vw;
-    animation-name: rotateIcons;
-    animation-duration: 2s;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-    animation-direction: alternate-reverse;
-    user-select: none;
-    -webkit-user-drag: none;
-}
-
-.loading-container svg.fingerprint {left: 15vw;top: 20vh;fill:#e74c3c}
-.loading-container svg.radioactive {left: 35vw;top: 15vh;fill:#2ecc71}
-.loading-container svg.wheel {left: 55vw;top: 16vh;fill:#1abc9c}
-.loading-container svg.wifi {left: 80vw;top: 22vh;fill:#9b59b6}
-.loading-container svg.hammer {left: 20vw;top: 75vh;fill:#f1c40f}
-.loading-container svg.lightbulb {left: 50vw;top: 62vh;fill:#e67e22}
-.loading-container svg.laptop {left: 75vw;top: 70vh;fill:#3498db}
-
-/*
-* KEYFRAMES
-*/
-
-@keyframes rotateIcons
-{
-    0% {transform: rotateZ(-6deg) translateY(-10px)}
-    100% {transform: rotateZ(6deg translateY(10px))}
-}
-
-/*
-* TITLE PART
-*/
-
-.title-container
-{
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    opacity: 0;
-    transition: opacity 2s linear;
-}
-
-.title-container.isVisible
-{
-    opacity: 1;
-}
-
-.title-container svg
-{
-    position: absolute;
-    width: 8vw;
-    height: 8vw;
-    fill: white;
-    top: 35vh;
-    z-index: 1;
-}
-
-.title-container svg.t1-letter{left: 10vw;}
-.title-container svg.e-letter{left: 18vw;}
-.title-container svg.c-letter{left: 26vw;}
-.title-container svg.h-letter{left: 34vw;}
-.title-container svg.s-letter{left: 48vw;}
-.title-container svg.t2-letter{left: 56vw;transform-origin: 50% 100%;}
-.title-container svg.o-letter{left: 64vw;transform-origin: 50% 50%;}
-.title-container svg.r-letter{left: 73vw;}
-.title-container svg.y-letter{left: 81vw;}
-
-.title-container svg.t2-letter.launch-anim
-{
-    animation-name: letterT2;
-    animation-duration: 1s;
-    animation-direction: alternate;
-}
-
-.title-container svg.o-letter.launch-anim
-{
-    animation-name: letterO;
-    animation-duration: 4s;
-    animation-delay: 0.4s;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-}
-
-/*
-* KEYFRAMES LETTER
-*/
-
-@keyframes letterT2
-{
-    0% {transform: rotateZ(0deg)}
-    25% {transform: rotateZ(-5deg)}
-    50% {transform: rotateZ(18deg)}
-    100% {transform: rotateZ(0deg)}
-}
-
-@keyframes letterO
-{
-    0% {transform: rotateZ(0deg)}
-    100% {transform: rotateZ(-360deg)}
-}
-
-/*
-* START BUTTON
-*/
-
-.title-container .start-button
-{
-    position: absolute;
-    bottom: 15vh;
-    left: 50vw;
-    transform: translate(-50%, -50%);
-    background-color: white;
-    font-family: 'Roboto', sans-serif;
-    font-size: 1vw;
-    border-radius: 28px;
-    box-shadow: 4px 4px 15px 0px rgba(0, 0, 0, 0.2);
-    cursor: pointer;
-    user-select: none;
-    height: 6vh;
-    width: 14vw;
-    color: rgb(26, 26, 29, 1.00);
-    user-select: none;
-    -webkit-user-drag: none;
-}
-
-
-/*
-* DISPLAY
+* DISPLAY-------------------------------------------------------------------------------
 */
 .techstory-popup.display{
     opacity: 1;
