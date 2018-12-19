@@ -1,6 +1,6 @@
 <?php   
 $form_value = $_GET['object'];
-echo 'plop '.$form_value;
+echo "plop ".$form_value;
 
 //test fi
 
@@ -21,6 +21,6 @@ mail($recep_mail, $subject ,$content, $headers);
 
 $file_name = 'test.txt';
 $file = fopen($file_name, "a+") or die ("tchip alors");
-fwrite($file, $form_value);
+fwrite($file, $form_value."\n");
 fclose($file);
 ?>
