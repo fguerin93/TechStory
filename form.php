@@ -2,25 +2,30 @@
 $form_value = $_GET['object'];
 echo "plop ".$form_value;
 
-//test fi
+
+$json= file_get_contents("vote.json");
+
+$json_data = json_decode($json, TRUE);
 
 
+$i=0;
+$len = sizeof($json_data["content"]);
 
-//mail send 
-$recep_mail ="santosphilippe93@gmail.com";
-$send_mail ="form@techstroy.fr";
-$subject = 'Form vote';
-$content = "Date : ".date("d/m/Y")."\n"."Heure : ".date("H:i:s")."\n"."Vote : ".$form_value;
-$headers = array(
-    'From' => $send_mail ,
-    'Reply-To' => $mail ,
-    'X-Mailer' => 'PHP/'.phpversion()
-);
-mail($recep_mail, $subject ,$content, $headers);
+//log vote
+$string = "vote ".$form_value;
+error_log($string, 3, "plop.log");
 
+//add the vote
+while ($i < $len ){
+    if($json_data["content"][$i] == $form_value){
+        $json_data["vote"][$json_data["content"][$i]] = $json_data["vote"]["Voiture"]+1;
+    }
+    $i = $i +1;
+}
 
-$file_name = 'test.txt';
-$file = fopen($file_name, "a+") or die ("tchip alors");
-fwrite($file, $form_value."\n");
-fclose($file);
+//encode to json
+$json_data = json_encode($json_data, TRUE);
+//put in file 
+file_put_contents("vote.json", $json_data);
+
 ?>
