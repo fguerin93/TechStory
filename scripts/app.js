@@ -229,8 +229,12 @@ $startButton.addEventListener('click', () => {
 const $slideScroll = document.querySelectorAll('.scroll-horiz')
 
 for (let i = 0; i < $slideScroll.length; i++){
-	$slideScroll[i].addEventListener('mousewheel', () => {
-		fullpage_api.moveSlideRight();
+	$slideScroll[i].addEventListener('wheel', (e) => {
+		if (e.deltaY > 50){
+			fullpage_api.moveSlideRight();
+		} else if (e.deltaY < 50){
+			fullpage_api.moveSlideLeft();
+		}
 	})
 }
 
