@@ -232,3 +232,238 @@ for (i = 0; i < slideScroll.length; i++){
 	})
 }
 
+// Dom elements for TIMELINE
+
+const $timelineContainer = document.querySelector('.timeline-container')
+const $timelineBar = $timelineContainer.querySelector('.timeline-bar')
+const $timePoints = $timelineBar.querySelectorAll('.time-point')
+const $actualDate = $timelineContainer.querySelector('.end-date')
+
+let dateTable = []
+let actualDate = 2018
+let timelineWidth = $timelineBar.offsetWidth
+let technoTypes = ['plane','watch','payment','phone']
+let technoType = ''
+const temoin = []
+for(let k=1; k<17; k++)
+{
+	temoin.push(false)
+}
+let temoins = ''
+
+//resize
+const resize = () =>
+{
+	timelineWidth = $timelineBar.offsetWidth
+}
+window.addEventListener('resize',resize)
+resize()
+
+// change the date table with new date
+const changeDateTable = () =>
+{
+	dateTable = []
+	for(let date=2018; date>actualDate-1; date--)
+	{
+		dateTable.push(date)
+	}
+}
+
+const addTimePoint = () =>
+{
+
+	//add new point
+	if (temoins==false)
+	{
+		const $newTimePoint = document.createElement('div')
+		$newTimePoint.classList.add('time-point', `date-${actualDate}`)
+		$newTimePoint.dataset.date=`${actualDate}`
+		$newTimePoint.style.right='0'
+		$timelineBar.appendChild($newTimePoint)
+		//add little icon
+		const $pointIcon = document.createElement('i')
+		let iconHTML = ''
+		switch (technoType)
+		{
+			case 'plane':
+			iconHTML='<i class="fas fa-plane"></i>'
+			break;
+			case 'watch':
+			iconHTML='<i class="fas fa-clock"></i>'
+			break;
+			case 'payment':
+			iconHTML='<i class="fas fa-credit-card"></i>'
+			break;
+			case 'phone':
+			iconHTML='<i class="fas fa-mobile-alt"></i>'
+			break;
+		}
+
+
+		$pointIcon.innerHTML=`<span style="color:white;position:absolute; transform:translate(-8px,-20px)">${iconHTML}</i></span>`
+		$newTimePoint.appendChild($pointIcon)
+	}
+
+	const $timePoints = $timelineBar.querySelectorAll('.time-point')
+	
+	for(let i=1; i<$timePoints.length-1; i++)
+	{
+		let pointDate = Number($timePoints[i].dataset.date)
+		$timePoints[i].style.transform=`translate(${calculateTranslateX(pointDate)}px, -2vh)`
+	}
+}
+
+const calculateTranslateX = (pointDate) =>
+{
+	let translateX = -(timelineWidth*(pointDate-actualDate)/(dateTable.length))
+	return translateX
+}
+
+
+const loop = () =>
+{
+	window.requestAnimationFrame(loop)
+	for(let i=1; i<5; i++)
+	{
+		if ((document.body.classList.contains(`fp-viewing-1-${i}`))||(document.body.classList.contains(`fp-viewing-2-${i}`))||(document.body.classList.contains(`fp-viewing-3-${i}`))||
+		(document.body.classList.contains(`fp-viewing-4-${i}`)))
+		{
+			$timelineContainer.classList.add('isVisible')
+		}
+		if ((document.body.classList.contains(`fp-viewing-1-0`))||(document.body.classList.contains(`fp-viewing-2-0`))||(document.body.classList.contains(`fp-viewing-3-0`))
+		||(document.body.classList.contains(`fp-viewing-4-0`)))
+		{
+			$timelineContainer.classList.remove('isVisible')
+		}
+	}
+}
+loop()
+
+
+
+// Selectionne le noeud dont les mutations seront observées
+//var targetNode = document.getElementById('some-id');
+
+// Options de l'observateur (quelles sont les mutations à observer)
+var config = { attributes: true };
+
+// Fonction callback à éxécuter quand une mutation est observée
+const callback = (mutationsList) =>
+{
+    for(const mutation of mutationsList) {
+		if (mutation.type == 'attributes') {
+			switch (true)
+			{
+				//aviation
+				case document.body.classList.contains('fp-viewing-1-1'):
+				actualDate = 1939
+				technoType = technoTypes[0]
+				temoins=temoin[1]
+				temoin[1]=true
+				break;
+				case document.body.classList.contains('fp-viewing-1-2'):
+				actualDate = 1915
+				technoType = technoTypes[0]
+				temoins=temoin[2]
+				temoin[2]=true
+				break;
+				case document.body.classList.contains('fp-viewing-1-3'):
+				actualDate = 1890
+				technoType = technoTypes[0]
+				temoins=temoin[3]
+				temoin[3]=true
+				break;
+				case document.body.classList.contains('fp-viewing-1-4'):
+				actualDate = 1405
+				technoType = technoTypes[0]
+				temoins=temoin[4]
+				temoin[4]=true
+				break;
+				//watch
+				case document.body.classList.contains('fp-viewing-2-1'):
+				actualDate = 1955
+				technoType = technoTypes[1]
+				temoins=temoin[5]
+				temoin[5]=true
+				break;
+				case document.body.classList.contains('fp-viewing-2-2'):
+				actualDate = 1278
+				technoType = technoTypes[1]
+				temoins=temoin[6]
+				temoin[6]=true
+				break;
+				case document.body.classList.contains('fp-viewing-2-3'):
+				actualDate = -1350
+				technoType = technoTypes[1]
+				temoins=temoin[7]
+				temoin[7]=true
+				break;
+				case document.body.classList.contains('fp-viewing-2-4'):
+				actualDate = -1500
+				technoType = technoTypes[1]
+				temoins=temoin[8]
+				temoin[8]=true
+				break;
+				//payment
+				case document.body.classList.contains('fp-viewing-3-1'):
+				actualDate = 1974
+				technoType = technoTypes[2]
+				temoins=temoin[9]
+				temoin[9]=true
+				break;
+				case document.body.classList.contains('fp-viewing-3-2'):
+				actualDate = 1550
+				technoType = technoTypes[2]
+				temoins=temoin[10]
+				temoin[10]=true
+				break;
+				case document.body.classList.contains('fp-viewing-3-3'):
+				actualDate = 700
+				technoType = technoTypes[2]
+				temoins=temoin[11]
+				temoin[11]=true
+				break;
+				case document.body.classList.contains('fp-viewing-3-4'):
+				actualDate = -700
+				technoType = technoTypes[2]
+				temoins=temoin[12]
+				temoin[12]=true
+				break;
+				//phone
+				case document.body.classList.contains('fp-viewing-4-1'):
+				actualDate = 2007
+				technoType = technoTypes[3]
+				temoins=temoin[13]
+				temoin[13]=true
+				break;
+				case document.body.classList.contains('fp-viewing-4-2'):
+				actualDate = 1915
+				technoType = technoTypes[3]
+				temoins=temoin[14]
+				temoin[14]=true
+				break;
+				case document.body.classList.contains('fp-viewing-4-3'):
+				actualDate = 1880
+				technoType = technoTypes[3]
+				temoins=temoin[15]
+				temoin[15]=true
+				break;
+				case document.body.classList.contains('fp-viewing-4-4'):
+				actualDate = 1876
+				technoType = technoTypes[3]
+				temoins=temoin[16]
+				temoin[16]=true
+				break;
+			}
+			$actualDate.textContent=`${actualDate}`
+			changeDateTable()
+			addTimePoint()
+        }
+    }
+}
+
+// Créé une instance de l'observateur lié à la fonction de callback
+var observer = new MutationObserver(callback);
+
+// Commence à observer le noeud cible pour les mutations précédemment configurées
+observer.observe(document.body, config);
