@@ -664,3 +664,64 @@
     opacity: 1;
     transform: translateY(0%);
 }
+
+/**
+*
+timeline container
+*/
+
+.timeline-container
+{
+    position: absolute;
+    width: 90vw;
+    opacity: 0;
+    transition: opacity 0.1s ease;
+}
+
+.timeline-container.isVisible
+{
+    height: 20vh;
+    left: 5vw;
+    bottom: 2vh;
+    opacity: 1;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+
+.timeline-container .timeline-bar
+{
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background: #fff;
+}
+
+.timeline-container .time-point
+{
+    position: absolute;
+    width: 2px;
+    height: 2vh;
+    transform: translateY(-2vh);
+    background: #fff;
+    transition: transform 1s ease;
+}
+
+.timeline-container .time-point.date-2018
+{
+    left:0;
+}
+
+.timeline-container p
+{
+    position: absolute;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #fff;
+    font-weight: bold;
+    transform: translateY(-8vh);
+}
+
+.timeline-container p.end-date
+{
+    right: 0;
+}
