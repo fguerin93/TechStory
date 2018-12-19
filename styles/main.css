@@ -12,8 +12,9 @@
     background : -webkit-radial-gradient(center, ellipse, rgb(62, 62, 70) 0%, rgb(26, 26, 29) 100%);
     z-index: 20;
     opacity: 0;
-    transform: translateY(-100%);
+    /*transform: translateY(-100%);*/
     transition: all 0.5s ease-out;
+    visibility: hidden;
 }
 
 .loading-container .sentence-container
@@ -608,7 +609,7 @@
     opacity: 0;
     transition: all 0.3s ease-out;
     will-change: opacity;
-    transform: translateY(-100%)
+    transform: translateY(+100%)
 }
 
 .techstory-popup-title{
@@ -667,9 +668,9 @@
     left: 0;
     z-index: 10;
     opacity: 0;
-    transition: all 0.3s ease-out;
+    transition: all 0.4s ease-out;
     will-change: opacity;
-    transform: translateY(-100%)
+    transform: translateY(+100%)
 }
 
 .about-popup-title{
@@ -740,7 +741,8 @@
 }
 .loading-container.display{
     opacity: 1;
-    transform: translateY(0%);
+    visibility: visible;
+    /*transform: translateY(0%);*/
 }
 
 /**
