@@ -338,6 +338,13 @@ const calculateTranslateX = (pointDate) =>
 	return translateX
 }
 
+const resizeTimeline = () =>
+{
+	addTimePoint()
+}
+window.addEventListener('resize',resizeTimeline)
+resizeTimeline()
+
 
 const loop = () =>
 {
