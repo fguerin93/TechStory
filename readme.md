@@ -10,6 +10,7 @@ Event better, every week you will be able to vote witch technology you want us t
 ## Features
 
 Few big features :
+
 - You can enjoy by playing with 3D model of the technology as we know today
 - You can browse the technology throught time
 - Vote for the next week technology
@@ -19,7 +20,7 @@ Few big features :
 ## Technologys used
 
 We used some front and back technology:
-    - **[three.js](https://threejs.org/)** used for the 3d technology and handeling load of models
-    - **[Fullpage.js](https://alvarotrigo.com/fullPage/)** used for a better user experience
-    - **PHP** used to and handle the form result
-    - **Ajax** used to communicate with the server side of the site
+- **[three.js](https://threejs.org/)** used for the 3d technology and handeling load of models
+- **[Fullpage.js](https://alvarotrigo.com/fullPage/)** used for a better user experience
+- **PHP** used to and handle the form result
+- **Ajax** used to communicate with the server side of the site
