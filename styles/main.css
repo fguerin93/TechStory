@@ -805,3 +805,89 @@ timeline container
 {
     right: 0;
 }
+
+
+/* 
+    FORM SECTION    
+*/
+.section.formulaire{
+    background: radial-gradient(rgba(26, 26, 29, 0.9), #1a1a1d);
+}
+.form-title{
+    font-family: 'Staatliches', cursive;
+    font-size: 3vw;
+    color: #fff;
+    position: absolute;
+    top: 9vh;
+    left: 50vw;
+    transform: translate(-50%, -50%);
+    user-select: none;
+}
+.form{
+    position: absolute;
+    top: 50vh;
+    left: 50vw;
+    transform: translate(-50%, -50%);
+    color: white;
+
+}
+
+
+.form .input-radio{
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.5vw;
+    margin-bottom: 10px;
+}
+
+.form input[type=radio]{
+    background-color: #fff;
+}
+.form input[type=radio]:hover{
+    background-color: rgb(103, 153, 199);
+}
+
+.form input[type=radio]:checked{
+    background-color: #2196F3;
+}
+
+.form input[type=radio] span{
+    top: 0;
+    left: 0;
+    height: auto;
+    width: auto;
+    background-color: #eee;
+    margin-left: 20px;
+}
+
+.form input[type=submit]{
+    cursor: pointer;
+    font-family: 'Roboto', sans-serif;
+    color: black;
+    font-size: 2vw;
+    background-color: white;
+    border-radius: 4px;
+    margin-top: 20px;
+    padding: 2px 2px 2px 2px;
+    
+}
+
+.form input[type=submit]:hover{
+    background-color: #d9d9db;
+}
+
+.message{
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.5vw;
+    opacity: 0;
+    transition: opacity 0.3s;
+    
+}
+
+.message.checked{
+    opacity: 1;
+}
+.form img{
+    width: 1.5vw;
+    height: 1.5vw;
+}

@@ -49,7 +49,7 @@ const sendRequest = ()=>{
 
         request.open('GET', url, true)
         request.send()
-        message.setAttribute('alt', 'Envoyé')
+        message.title= 'Envoyé'
         message.classList.add('checked')
     }
     
@@ -89,6 +89,6 @@ const checkVote = ()=>{
 
 //if user already vote
 const alreadyVote = ()=>{
-    message.setAttribute('alt', "Vous l'avez déjà envoyé")
+    message.title="Vous l'avez déjà envoyé"
     message.classList.add('checked')
 }
