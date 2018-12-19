@@ -122,7 +122,6 @@ popup.$aboutButtonClose = popup.$aboutPopup.querySelector('.about-popup-button-c
 
 for(let i = 0; i < popup.$techstoryButton.length; i++){
 	popup.$techstoryButton[i].addEventListener('click', () => {
-		console.log('bouh')
 		/*popup.$techstoryPopup.style.display = 'block'*/
 		popup.$techstoryPopup.classList.add('display')
 	})
@@ -134,7 +133,6 @@ popup.$techstoryButtonClose.addEventListener('click', () => {
 
 for(let i = 0; i < popup.$aboutButton.length; i++){
 	popup.$aboutButton[i].addEventListener('click', () => {
-		console.log('bouh')
 		/*popup.$aboutPopup.style.display = 'block'*/
 		popup.$aboutPopup.classList.add('display')
 	})
@@ -191,9 +189,11 @@ window.setTimeout(function()
 
 window.setTimeout(function()
 {
-    $titleContainer.classList.add('isVisible')
+	$titleContainer.classList.add('isVisible')
     $titleLetters[5].classList.add('launch-anim')
-    $titleLetters[6].classList.add('launch-anim')
+	$titleLetters[6].classList.add('launch-anim')
+	$startButton.style.display='flex'
+	$startButton.style.justifyContent='center'
 },15000)
 
 

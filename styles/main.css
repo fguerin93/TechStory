@@ -239,6 +239,7 @@
     color: rgb(26, 26, 29, 1.00);
     user-select: none;
     -webkit-user-drag: none;
+    display: none;
     transition: all 0.4s ease;
 }
 
