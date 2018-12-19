@@ -10,11 +10,11 @@ Event better, every week you will be able to vote witch technology you want us t
 ## Features
 
 Few big features :
-    - You can enjoy by playing with 3D model of the technology as we know today
-    - You can browse the technology throught time
-    - Vote for the next week technology
-    - You can browse the web site with the directional arrow of your keyboard
-        - If you are on phone or tablet you can juste swipe in any direction you want, left, right...
+- You can enjoy by playing with 3D model of the technology as we know today
+- You can browse the technology throught time
+- Vote for the next week technology
+- You can browse the web site with the directional arrow of your keyboard
+    - If you are on phone or tablet you can juste swipe in any direction you want, left, right...
 
 ## Technologys used
 
