@@ -379,13 +379,13 @@ loop()
 
 
 
-// Selectionne le noeud dont les mutations seront observées
+//select the node where mutation will be observe
 //var targetNode = document.getElementById('some-id');
 
 // Options de l'observateur (quelles sont les mutations à observer)
 var config = { attributes: true };
 
-// Fonction callback à éxécuter quand une mutation est observée
+//callback function to execute when a mutation is observe
 const callback = (mutationsList) =>
 {
     for(const mutation of mutationsList) {
@@ -500,8 +500,8 @@ const callback = (mutationsList) =>
     }
 }
 
-// Créé une instance de l'observateur lié à la fonction de callback
+// create an instance link to the call basck function
 var observer = new MutationObserver(callback);
 
-// Commence à observer le noeud cible pour les mutations précédemment configurées
+//start to observe the node target to observe mutation previously configure
 observer.observe(document.body, config);
