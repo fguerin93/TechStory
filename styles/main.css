@@ -911,3 +911,10 @@ button.discover-button:hover,
 {
     opacity:0.8;
 }
+
+/*
+    3D cursor
+*/
+canvas:hover{
+    cursor: grab;
+}

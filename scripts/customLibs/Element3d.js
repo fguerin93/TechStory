@@ -59,7 +59,7 @@ class Element3d{
         this.setLight()
         this.objectloading()
         this.loop()
-
+        this.cursorEvent()
     }
 
     setup(){
@@ -224,6 +224,17 @@ class Element3d{
 
         this.renderer.setSize( this.width, this.height)
      
+    }
+
+    cursorEvent(){
+        this.renderer.domElement.addEventListener('mousedown', ()=>{
+            this.renderer.domElement.style.cursor = "grabbing"
+        })
+
+
+        this.renderer.domElement.addEventListener('mouseup', ()=>{
+            this.renderer.domElement.style.cursor = "grab"
+        })
     }
     
 }
