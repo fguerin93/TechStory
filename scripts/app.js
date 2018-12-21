@@ -122,7 +122,6 @@ popup.$aboutButtonClose = popup.$aboutPopup.querySelector('.about-popup-button-c
 
 for(let i = 0; i < popup.$techstoryButton.length; i++){
 	popup.$techstoryButton[i].addEventListener('click', () => {
-		console.log('bouh')
 		/*popup.$techstoryPopup.style.display = 'block'*/
 		popup.$techstoryPopup.classList.add('display')
 	})
@@ -134,7 +133,6 @@ popup.$techstoryButtonClose.addEventListener('click', () => {
 
 for(let i = 0; i < popup.$aboutButton.length; i++){
 	popup.$aboutButton[i].addEventListener('click', () => {
-		console.log('bouh')
 		/*popup.$aboutPopup.style.display = 'block'*/
 		popup.$aboutPopup.classList.add('display')
 	})
@@ -191,9 +189,11 @@ window.setTimeout(function()
 
 window.setTimeout(function()
 {
-    $titleContainer.classList.add('isVisible')
+	$titleContainer.classList.add('isVisible')
     $titleLetters[5].classList.add('launch-anim')
-    $titleLetters[6].classList.add('launch-anim')
+	$titleLetters[6].classList.add('launch-anim')
+	$startButton.style.display='flex'
+	$startButton.style.justifyContent='center'
 },15000)
 
 
@@ -378,13 +378,13 @@ loop()
 
 
 
-// Selectionne le noeud dont les mutations seront observées
+//select the node where mutation will be observe
 //var targetNode = document.getElementById('some-id');
 
 // Options de l'observateur (quelles sont les mutations à observer)
 var config = { attributes: true };
 
-// Fonction callback à éxécuter quand une mutation est observée
+//callback function to execute when a mutation is observe
 const callback = (mutationsList) =>
 {
     for(const mutation of mutationsList) {
@@ -499,8 +499,8 @@ const callback = (mutationsList) =>
     }
 }
 
-// Créé une instance de l'observateur lié à la fonction de callback
+// create an instance link to the call basck function
 var observer = new MutationObserver(callback);
 
-// Commence à observer le noeud cible pour les mutations précédemment configurées
+//start to observe the node target to observe mutation previously configure
 observer.observe(document.body, config);

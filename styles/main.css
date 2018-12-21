@@ -239,6 +239,7 @@
     color: rgb(26, 26, 29, 1.00);
     user-select: none;
     -webkit-user-drag: none;
+    display: none;
     transition: all 0.4s ease;
 }
 
@@ -754,6 +755,7 @@ timeline container
 {
     position: absolute;
     width: 90vw;
+    bottom: -10vh;
     opacity: 0;
     transition: opacity 0.1s ease;
 }
@@ -890,4 +892,29 @@ timeline container
 .form img{
     width: 1.5vw;
     height: 1.5vw;
+}
+
+/**
+*
+hover on buttons
+*/
+
+button.discover-button,
+.end-slide button
+{
+    opacity:1;
+    transition: opacity 0.3s ease;
+}
+
+button.discover-button:hover,
+.end-slide button:hover
+{
+    opacity:0.8;
+}
+
+/*
+    3D cursor
+*/
+canvas:hover{
+    cursor: grab;
 }
