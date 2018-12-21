@@ -249,7 +249,6 @@ const $lsvCloseButton = document.querySelectorAll('.techno-lsv-popup-button-clos
 for (let i = 0; i < $lsvPopup.length; i++){
 	$lsvButton[i].addEventListener('click', () => {
 		$lsvPopup[i].classList.add('display')
-		console.log('oui')
 	})
 }
 for (let i = 0; i < $lsvCloseButton.length; i++){
